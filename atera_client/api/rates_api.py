@@ -48,8 +48,8 @@ class RatesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.rates_delete_expense_with_http_info(expense_id, **kwargs)  # noqa: E501
         else:
             (data) = self.rates_delete_expense_with_http_info(expense_id, **kwargs)  # noqa: E501
@@ -71,31 +71,31 @@ class RatesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['expense_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["expense_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method rates_delete_expense" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method rates_delete_expense" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'expense_id' is set
-        if self.api_client.client_side_validation and ('expense_id' not in params or
-                                                       params['expense_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `expense_id` when calling `rates_delete_expense`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "expense_id" not in params or params["expense_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `expense_id` when calling `rates_delete_expense`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'expense_id' in params:
-            path_params['expenseId'] = params['expense_id']  # noqa: E501
+        if "expense_id" in params:
+            path_params["expenseId"] = params["expense_id"]  # noqa: E501
 
         query_params = []
 
@@ -106,27 +106,30 @@ class RatesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/rates/expenses/{expenseId}', 'DELETE',
+            "/api/v3/rates/expenses/{expenseId}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def rates_delete_product(self, product_id, **kwargs):  # noqa: E501
         """Delete specified product  # noqa: E501
@@ -143,8 +146,8 @@ class RatesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.rates_delete_product_with_http_info(product_id, **kwargs)  # noqa: E501
         else:
             (data) = self.rates_delete_product_with_http_info(product_id, **kwargs)  # noqa: E501
@@ -166,31 +169,31 @@ class RatesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['product_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["product_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method rates_delete_product" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method rates_delete_product" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'product_id' is set
-        if self.api_client.client_side_validation and ('product_id' not in params or
-                                                       params['product_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `product_id` when calling `rates_delete_product`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "product_id" not in params or params["product_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `product_id` when calling `rates_delete_product`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'product_id' in params:
-            path_params['productId'] = params['product_id']  # noqa: E501
+        if "product_id" in params:
+            path_params["productId"] = params["product_id"]  # noqa: E501
 
         query_params = []
 
@@ -201,27 +204,30 @@ class RatesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/rates/products/{productId}', 'DELETE',
+            "/api/v3/rates/products/{productId}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def rates_expense_query_dto(self, expense_id, **kwargs):  # noqa: E501
         """Find specified expense  # noqa: E501
@@ -238,8 +244,8 @@ class RatesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.rates_expense_query_dto_with_http_info(expense_id, **kwargs)  # noqa: E501
         else:
             (data) = self.rates_expense_query_dto_with_http_info(expense_id, **kwargs)  # noqa: E501
@@ -261,31 +267,31 @@ class RatesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['expense_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["expense_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method rates_expense_query_dto" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method rates_expense_query_dto" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'expense_id' is set
-        if self.api_client.client_side_validation and ('expense_id' not in params or
-                                                       params['expense_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `expense_id` when calling `rates_expense_query_dto`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "expense_id" not in params or params["expense_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `expense_id` when calling `rates_expense_query_dto`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'expense_id' in params:
-            path_params['expenseId'] = params['expense_id']  # noqa: E501
+        if "expense_id" in params:
+            path_params["expenseId"] = params["expense_id"]  # noqa: E501
 
         query_params = []
 
@@ -296,27 +302,30 @@ class RatesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/rates/expenses/{expenseId}', 'GET',
+            "/api/v3/rates/expenses/{expenseId}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RateQueryDTO',  # noqa: E501
+            response_type="RateQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def rates_get_expenses(self, **kwargs):  # noqa: E501
         """Find expenses  # noqa: E501
@@ -334,8 +343,8 @@ class RatesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.rates_get_expenses_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.rates_get_expenses_with_http_info(**kwargs)  # noqa: E501
@@ -358,31 +367,28 @@ class RatesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'items_in_page']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["page", "items_in_page"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method rates_get_expenses" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method rates_get_expenses" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
-        if 'items_in_page' in params:
-            query_params.append(('itemsInPage', params['items_in_page']))  # noqa: E501
+        if "page" in params:
+            query_params.append(("page", params["page"]))  # noqa: E501
+        if "items_in_page" in params:
+            query_params.append(("itemsInPage", params["items_in_page"]))  # noqa: E501
 
         header_params = {}
 
@@ -391,27 +397,28 @@ class RatesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/rates/expenses', 'GET',
+            "/api/v3/rates/expenses",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='APIResultWrapperRateQueryDTO',  # noqa: E501
+            response_type="APIResultWrapperRateQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def rates_get_products(self, **kwargs):  # noqa: E501
         """Find products  # noqa: E501
@@ -429,8 +436,8 @@ class RatesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.rates_get_products_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.rates_get_products_with_http_info(**kwargs)  # noqa: E501
@@ -453,31 +460,28 @@ class RatesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'items_in_page']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["page", "items_in_page"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method rates_get_products" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method rates_get_products" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
-        if 'items_in_page' in params:
-            query_params.append(('itemsInPage', params['items_in_page']))  # noqa: E501
+        if "page" in params:
+            query_params.append(("page", params["page"]))  # noqa: E501
+        if "items_in_page" in params:
+            query_params.append(("itemsInPage", params["items_in_page"]))  # noqa: E501
 
         header_params = {}
 
@@ -486,27 +490,28 @@ class RatesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/rates/products', 'GET',
+            "/api/v3/rates/products",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='APIResultWrapperRateQueryDTO',  # noqa: E501
+            response_type="APIResultWrapperRateQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def rates_post_expense(self, expense, **kwargs):  # noqa: E501
         """Create expense  # noqa: E501
@@ -523,8 +528,8 @@ class RatesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.rates_post_expense_with_http_info(expense, **kwargs)  # noqa: E501
         else:
             (data) = self.rates_post_expense_with_http_info(expense, **kwargs)  # noqa: E501
@@ -546,24 +551,22 @@ class RatesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['expense']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["expense"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method rates_post_expense" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method rates_post_expense" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'expense' is set
-        if self.api_client.client_side_validation and ('expense' not in params or
-                                                       params['expense'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "expense" not in params or params["expense"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `expense` when calling `rates_post_expense`")  # noqa: E501
 
         collection_formats = {}
@@ -578,34 +581,36 @@ class RatesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'expense' in params:
-            body_params = params['expense']
+        if "expense" in params:
+            body_params = params["expense"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/rates/expenses', 'POST',
+            "/api/v3/rates/expenses",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Result',  # noqa: E501
+            response_type="Result",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def rates_post_product(self, product, **kwargs):  # noqa: E501
         """Create product  # noqa: E501
@@ -622,8 +627,8 @@ class RatesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.rates_post_product_with_http_info(product, **kwargs)  # noqa: E501
         else:
             (data) = self.rates_post_product_with_http_info(product, **kwargs)  # noqa: E501
@@ -645,24 +650,22 @@ class RatesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['product']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["product"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method rates_post_product" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method rates_post_product" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'product' is set
-        if self.api_client.client_side_validation and ('product' not in params or
-                                                       params['product'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "product" not in params or params["product"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `product` when calling `rates_post_product`")  # noqa: E501
 
         collection_formats = {}
@@ -677,34 +680,36 @@ class RatesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'product' in params:
-            body_params = params['product']
+        if "product" in params:
+            body_params = params["product"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/rates/products', 'POST',
+            "/api/v3/rates/products",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Result',  # noqa: E501
+            response_type="Result",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def rates_product_query_dto(self, product_id, **kwargs):  # noqa: E501
         """Find specified product  # noqa: E501
@@ -721,8 +726,8 @@ class RatesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.rates_product_query_dto_with_http_info(product_id, **kwargs)  # noqa: E501
         else:
             (data) = self.rates_product_query_dto_with_http_info(product_id, **kwargs)  # noqa: E501
@@ -744,31 +749,31 @@ class RatesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['product_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["product_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method rates_product_query_dto" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method rates_product_query_dto" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'product_id' is set
-        if self.api_client.client_side_validation and ('product_id' not in params or
-                                                       params['product_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `product_id` when calling `rates_product_query_dto`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "product_id" not in params or params["product_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `product_id` when calling `rates_product_query_dto`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'product_id' in params:
-            path_params['productId'] = params['product_id']  # noqa: E501
+        if "product_id" in params:
+            path_params["productId"] = params["product_id"]  # noqa: E501
 
         query_params = []
 
@@ -779,27 +784,30 @@ class RatesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/rates/products/{productId}', 'GET',
+            "/api/v3/rates/products/{productId}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RateQueryDTO',  # noqa: E501
+            response_type="RateQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def rates_put_expense(self, expense_id, expense, **kwargs):  # noqa: E501
         """Update specified expense  # noqa: E501
@@ -817,8 +825,8 @@ class RatesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.rates_put_expense_with_http_info(expense_id, expense, **kwargs)  # noqa: E501
         else:
             (data) = self.rates_put_expense_with_http_info(expense_id, expense, **kwargs)  # noqa: E501
@@ -841,35 +849,36 @@ class RatesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['expense_id', 'expense']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["expense_id", "expense"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method rates_put_expense" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method rates_put_expense" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'expense_id' is set
-        if self.api_client.client_side_validation and ('expense_id' not in params or
-                                                       params['expense_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `expense_id` when calling `rates_put_expense`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "expense_id" not in params or params["expense_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `expense_id` when calling `rates_put_expense`"
+            )  # noqa: E501
         # verify the required parameter 'expense' is set
-        if self.api_client.client_side_validation and ('expense' not in params or
-                                                       params['expense'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "expense" not in params or params["expense"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `expense` when calling `rates_put_expense`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'expense_id' in params:
-            path_params['expenseId'] = params['expense_id']  # noqa: E501
+        if "expense_id" in params:
+            path_params["expenseId"] = params["expense_id"]  # noqa: E501
 
         query_params = []
 
@@ -879,34 +888,36 @@ class RatesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'expense' in params:
-            body_params = params['expense']
+        if "expense" in params:
+            body_params = params["expense"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/rates/expenses/{expenseId}', 'PUT',
+            "/api/v3/rates/expenses/{expenseId}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Result',  # noqa: E501
+            response_type="Result",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def rates_put_product(self, product_id, product, **kwargs):  # noqa: E501
         """Update specified product  # noqa: E501
@@ -924,8 +935,8 @@ class RatesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.rates_put_product_with_http_info(product_id, product, **kwargs)  # noqa: E501
         else:
             (data) = self.rates_put_product_with_http_info(product_id, product, **kwargs)  # noqa: E501
@@ -948,35 +959,36 @@ class RatesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['product_id', 'product']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["product_id", "product"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method rates_put_product" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method rates_put_product" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'product_id' is set
-        if self.api_client.client_side_validation and ('product_id' not in params or
-                                                       params['product_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `product_id` when calling `rates_put_product`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "product_id" not in params or params["product_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `product_id` when calling `rates_put_product`"
+            )  # noqa: E501
         # verify the required parameter 'product' is set
-        if self.api_client.client_side_validation and ('product' not in params or
-                                                       params['product'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "product" not in params or params["product"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `product` when calling `rates_put_product`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'product_id' in params:
-            path_params['productId'] = params['product_id']  # noqa: E501
+        if "product_id" in params:
+            path_params["productId"] = params["product_id"]  # noqa: E501
 
         query_params = []
 
@@ -986,31 +998,33 @@ class RatesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'product' in params:
-            body_params = params['product']
+        if "product" in params:
+            body_params = params["product"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/rates/products/{productId}', 'PUT',
+            "/api/v3/rates/products/{productId}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Result',  # noqa: E501
+            response_type="Result",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

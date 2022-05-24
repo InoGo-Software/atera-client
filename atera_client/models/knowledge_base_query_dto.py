@@ -33,38 +33,54 @@ class KnowledgeBaseQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'kbid': 'int',
-        'kb_timestamp': 'datetime',
-        'kb_context': 'str',
-        'kb_product': 'str',
-        'kb_rating_yes': 'int',
-        'kb_rating_no': 'int',
-        'kb_rating_views': 'int',
-        'kb_last_modified': 'datetime',
-        'kb_is_private': 'bool',
-        'kb_status': 'int',
-        'kb_priority': 'int',
-        'kb_keywords': 'str',
-        'kb_address': 'str'
+        "kbid": "int",
+        "kb_timestamp": "datetime",
+        "kb_context": "str",
+        "kb_product": "str",
+        "kb_rating_yes": "int",
+        "kb_rating_no": "int",
+        "kb_rating_views": "int",
+        "kb_last_modified": "datetime",
+        "kb_is_private": "bool",
+        "kb_status": "int",
+        "kb_priority": "int",
+        "kb_keywords": "str",
+        "kb_address": "str",
     }
 
     attribute_map = {
-        'kbid': 'KBID',
-        'kb_timestamp': 'KBTimestamp',
-        'kb_context': 'KBContext',
-        'kb_product': 'KBProduct',
-        'kb_rating_yes': 'KBRating_Yes',
-        'kb_rating_no': 'KBRating_No',
-        'kb_rating_views': 'KBRating_Views',
-        'kb_last_modified': 'KBLastModified',
-        'kb_is_private': 'KBIsPrivate',
-        'kb_status': 'KBStatus',
-        'kb_priority': 'KBPriority',
-        'kb_keywords': 'KBKeywords',
-        'kb_address': 'KBAddress'
+        "kbid": "KBID",
+        "kb_timestamp": "KBTimestamp",
+        "kb_context": "KBContext",
+        "kb_product": "KBProduct",
+        "kb_rating_yes": "KBRating_Yes",
+        "kb_rating_no": "KBRating_No",
+        "kb_rating_views": "KBRating_Views",
+        "kb_last_modified": "KBLastModified",
+        "kb_is_private": "KBIsPrivate",
+        "kb_status": "KBStatus",
+        "kb_priority": "KBPriority",
+        "kb_keywords": "KBKeywords",
+        "kb_address": "KBAddress",
     }
 
-    def __init__(self, kbid=None, kb_timestamp=None, kb_context=None, kb_product=None, kb_rating_yes=None, kb_rating_no=None, kb_rating_views=None, kb_last_modified=None, kb_is_private=None, kb_status=None, kb_priority=None, kb_keywords=None, kb_address=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        kbid=None,
+        kb_timestamp=None,
+        kb_context=None,
+        kb_product=None,
+        kb_rating_yes=None,
+        kb_rating_no=None,
+        kb_rating_views=None,
+        kb_last_modified=None,
+        kb_is_private=None,
+        kb_status=None,
+        kb_priority=None,
+        kb_keywords=None,
+        kb_address=None,
+        _configuration=None,
+    ):  # noqa: E501
         """KnowledgeBaseQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -392,18 +408,16 @@ class KnowledgeBaseQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(KnowledgeBaseQueryDTO, dict):

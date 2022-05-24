@@ -33,28 +33,39 @@ class TicketCommentQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        '_date': 'datetime',
-        'comment': 'str',
-        'end_user_id': 'int',
-        'technician_contact_id': 'int',
-        'email': 'str',
-        'first_name': 'str',
-        'last_name': 'str',
-        'is_internal': 'bool'
+        "_date": "datetime",
+        "comment": "str",
+        "end_user_id": "int",
+        "technician_contact_id": "int",
+        "email": "str",
+        "first_name": "str",
+        "last_name": "str",
+        "is_internal": "bool",
     }
 
     attribute_map = {
-        '_date': 'Date',
-        'comment': 'Comment',
-        'end_user_id': 'EndUserID',
-        'technician_contact_id': 'TechnicianContactID',
-        'email': 'Email',
-        'first_name': 'FirstName',
-        'last_name': 'LastName',
-        'is_internal': 'IsInternal'
+        "_date": "Date",
+        "comment": "Comment",
+        "end_user_id": "EndUserID",
+        "technician_contact_id": "TechnicianContactID",
+        "email": "Email",
+        "first_name": "FirstName",
+        "last_name": "LastName",
+        "is_internal": "IsInternal",
     }
 
-    def __init__(self, _date=None, comment=None, end_user_id=None, technician_contact_id=None, email=None, first_name=None, last_name=None, is_internal=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        _date=None,
+        comment=None,
+        end_user_id=None,
+        technician_contact_id=None,
+        email=None,
+        first_name=None,
+        last_name=None,
+        is_internal=None,
+        _configuration=None,
+    ):  # noqa: E501
         """TicketCommentQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -262,18 +273,16 @@ class TicketCommentQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(TicketCommentQueryDTO, dict):

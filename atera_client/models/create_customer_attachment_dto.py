@@ -32,17 +32,9 @@ class CreateCustomerAttachmentDTO(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {
-        'customer_id': 'int',
-        'name': 'str',
-        'content_based64': 'str'
-    }
+    swagger_types = {"customer_id": "int", "name": "str", "content_based64": "str"}
 
-    attribute_map = {
-        'customer_id': 'CustomerId',
-        'name': 'Name',
-        'content_based64': 'ContentBased64'
-    }
+    attribute_map = {"customer_id": "CustomerId", "name": "Name", "content_based64": "ContentBased64"}
 
     def __init__(self, customer_id=None, name=None, content_based64=None, _configuration=None):  # noqa: E501
         """CreateCustomerAttachmentDTO - a model defined in Swagger"""  # noqa: E501
@@ -135,18 +127,16 @@ class CreateCustomerAttachmentDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(CreateCustomerAttachmentDTO, dict):

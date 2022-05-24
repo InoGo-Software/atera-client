@@ -33,24 +33,33 @@ class UpdateTicketDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ticket_title': 'str',
-        'ticket_status': 'str',
-        'ticket_type': 'str',
-        'ticket_priority': 'str',
-        'ticket_impact': 'str',
-        'technician_contact_id': 'int'
+        "ticket_title": "str",
+        "ticket_status": "str",
+        "ticket_type": "str",
+        "ticket_priority": "str",
+        "ticket_impact": "str",
+        "technician_contact_id": "int",
     }
 
     attribute_map = {
-        'ticket_title': 'TicketTitle',
-        'ticket_status': 'TicketStatus',
-        'ticket_type': 'TicketType',
-        'ticket_priority': 'TicketPriority',
-        'ticket_impact': 'TicketImpact',
-        'technician_contact_id': 'TechnicianContactID'
+        "ticket_title": "TicketTitle",
+        "ticket_status": "TicketStatus",
+        "ticket_type": "TicketType",
+        "ticket_priority": "TicketPriority",
+        "ticket_impact": "TicketImpact",
+        "technician_contact_id": "TechnicianContactID",
     }
 
-    def __init__(self, ticket_title=None, ticket_status=None, ticket_type=None, ticket_priority=None, ticket_impact=None, technician_contact_id=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        ticket_title=None,
+        ticket_status=None,
+        ticket_type=None,
+        ticket_priority=None,
+        ticket_impact=None,
+        technician_contact_id=None,
+        _configuration=None,
+    ):  # noqa: E501
         """UpdateTicketDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -138,11 +147,11 @@ class UpdateTicketDTO(object):
         :type: str
         """
         allowed_values = ["Incident", "Problem", "Request", "Change"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                ticket_type not in allowed_values):
+        if self._configuration.client_side_validation and ticket_type not in allowed_values:
             raise ValueError(
-                "Invalid value for `ticket_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(ticket_type, allowed_values)
+                "Invalid value for `ticket_type` ({0}), must be one of {1}".format(  # noqa: E501
+                    ticket_type, allowed_values
+                )
             )
 
         self._ticket_type = ticket_type
@@ -166,11 +175,11 @@ class UpdateTicketDTO(object):
         :type: str
         """
         allowed_values = ["Low", "Medium", "High", "Critical"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                ticket_priority not in allowed_values):
+        if self._configuration.client_side_validation and ticket_priority not in allowed_values:
             raise ValueError(
-                "Invalid value for `ticket_priority` ({0}), must be one of {1}"  # noqa: E501
-                .format(ticket_priority, allowed_values)
+                "Invalid value for `ticket_priority` ({0}), must be one of {1}".format(  # noqa: E501
+                    ticket_priority, allowed_values
+                )
             )
 
         self._ticket_priority = ticket_priority
@@ -194,11 +203,11 @@ class UpdateTicketDTO(object):
         :type: str
         """
         allowed_values = ["NoImpact", "SiteDown", "ServerIssue", "Minor", "Major", "Crisis"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                ticket_impact not in allowed_values):
+        if self._configuration.client_side_validation and ticket_impact not in allowed_values:
             raise ValueError(
-                "Invalid value for `ticket_impact` ({0}), must be one of {1}"  # noqa: E501
-                .format(ticket_impact, allowed_values)
+                "Invalid value for `ticket_impact` ({0}), must be one of {1}".format(  # noqa: E501
+                    ticket_impact, allowed_values
+                )
             )
 
         self._ticket_impact = ticket_impact
@@ -231,18 +240,16 @@ class UpdateTicketDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(UpdateTicketDTO, dict):

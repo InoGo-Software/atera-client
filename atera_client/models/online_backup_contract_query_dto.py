@@ -32,17 +32,9 @@ class OnlineBackupContractQueryDTO(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {
-        'rate_per_gb': 'RateQueryDTO',
-        'count_by': 'str',
-        'billing_period': 'str'
-    }
+    swagger_types = {"rate_per_gb": "RateQueryDTO", "count_by": "str", "billing_period": "str"}
 
-    attribute_map = {
-        'rate_per_gb': 'RatePerGB',
-        'count_by': 'CountBy',
-        'billing_period': 'BillingPeriod'
-    }
+    attribute_map = {"rate_per_gb": "RatePerGB", "count_by": "CountBy", "billing_period": "BillingPeriod"}
 
     def __init__(self, rate_per_gb=None, count_by=None, billing_period=None, _configuration=None):  # noqa: E501
         """OnlineBackupContractQueryDTO - a model defined in Swagger"""  # noqa: E501
@@ -101,12 +93,20 @@ class OnlineBackupContractQueryDTO(object):
         :param count_by: The count_by of this OnlineBackupContractQueryDTO.  # noqa: E501
         :type: str
         """
-        allowed_values = ["PCAgents", "MacAgents", "ServerAgents", "OtherDevices", "AgentsOnly", "All", "PCsTotalGB", "ServersTotalGB", "TotalGB"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                count_by not in allowed_values):
+        allowed_values = [
+            "PCAgents",
+            "MacAgents",
+            "ServerAgents",
+            "OtherDevices",
+            "AgentsOnly",
+            "All",
+            "PCsTotalGB",
+            "ServersTotalGB",
+            "TotalGB",
+        ]  # noqa: E501
+        if self._configuration.client_side_validation and count_by not in allowed_values:
             raise ValueError(
-                "Invalid value for `count_by` ({0}), must be one of {1}"  # noqa: E501
-                .format(count_by, allowed_values)
+                "Invalid value for `count_by` ({0}), must be one of {1}".format(count_by, allowed_values)  # noqa: E501
             )
 
         self._count_by = count_by
@@ -129,12 +129,21 @@ class OnlineBackupContractQueryDTO(object):
         :param billing_period: The billing_period of this OnlineBackupContractQueryDTO.  # noqa: E501
         :type: str
         """
-        allowed_values = ["EndOfContractDuration", "Weekly", "BiWeekly", "Monthly", "Quarterly", "TwiceAYear", "Yearly", "OnDemand"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                billing_period not in allowed_values):
+        allowed_values = [
+            "EndOfContractDuration",
+            "Weekly",
+            "BiWeekly",
+            "Monthly",
+            "Quarterly",
+            "TwiceAYear",
+            "Yearly",
+            "OnDemand",
+        ]  # noqa: E501
+        if self._configuration.client_side_validation and billing_period not in allowed_values:
             raise ValueError(
-                "Invalid value for `billing_period` ({0}), must be one of {1}"  # noqa: E501
-                .format(billing_period, allowed_values)
+                "Invalid value for `billing_period` ({0}), must be one of {1}".format(  # noqa: E501
+                    billing_period, allowed_values
+                )
             )
 
         self._billing_period = billing_period
@@ -146,18 +155,16 @@ class OnlineBackupContractQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(OnlineBackupContractQueryDTO, dict):

@@ -33,40 +33,57 @@ class CreateSNMPDTOV3(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'username': 'str',
-        'authentication_alg': 'str',
-        'privacy_alg': 'str',
-        'authentication_password': 'str',
-        'privacy_password': 'str',
-        'security_level': 'str',
-        'hostname': 'str',
-        'port': 'int',
-        'device_type': 'str',
-        'name': 'str',
-        'customer_id': 'int',
-        'folder_id': 'int',
-        'monitoring_agent_id': 'int',
-        'monitored': 'bool'
+        "username": "str",
+        "authentication_alg": "str",
+        "privacy_alg": "str",
+        "authentication_password": "str",
+        "privacy_password": "str",
+        "security_level": "str",
+        "hostname": "str",
+        "port": "int",
+        "device_type": "str",
+        "name": "str",
+        "customer_id": "int",
+        "folder_id": "int",
+        "monitoring_agent_id": "int",
+        "monitored": "bool",
     }
 
     attribute_map = {
-        'username': 'Username',
-        'authentication_alg': 'AuthenticationAlg',
-        'privacy_alg': 'PrivacyAlg',
-        'authentication_password': 'AuthenticationPassword',
-        'privacy_password': 'PrivacyPassword',
-        'security_level': '_SecurityLevel',
-        'hostname': 'Hostname',
-        'port': 'Port',
-        'device_type': 'DeviceType',
-        'name': 'Name',
-        'customer_id': 'CustomerID',
-        'folder_id': 'FolderID',
-        'monitoring_agent_id': 'MonitoringAgentID',
-        'monitored': 'Monitored'
+        "username": "Username",
+        "authentication_alg": "AuthenticationAlg",
+        "privacy_alg": "PrivacyAlg",
+        "authentication_password": "AuthenticationPassword",
+        "privacy_password": "PrivacyPassword",
+        "security_level": "_SecurityLevel",
+        "hostname": "Hostname",
+        "port": "Port",
+        "device_type": "DeviceType",
+        "name": "Name",
+        "customer_id": "CustomerID",
+        "folder_id": "FolderID",
+        "monitoring_agent_id": "MonitoringAgentID",
+        "monitored": "Monitored",
     }
 
-    def __init__(self, username=None, authentication_alg=None, privacy_alg=None, authentication_password=None, privacy_password=None, security_level=None, hostname=None, port=None, device_type=None, name=None, customer_id=None, folder_id=None, monitoring_agent_id=None, monitored=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        username=None,
+        authentication_alg=None,
+        privacy_alg=None,
+        authentication_password=None,
+        privacy_password=None,
+        security_level=None,
+        hostname=None,
+        port=None,
+        device_type=None,
+        name=None,
+        customer_id=None,
+        folder_id=None,
+        monitoring_agent_id=None,
+        monitored=None,
+        _configuration=None,
+    ):  # noqa: E501
         """CreateSNMPDTOV3 - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -157,11 +174,11 @@ class CreateSNMPDTOV3(object):
         :type: str
         """
         allowed_values = ["Undefined", "SHA1", "MD5"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                authentication_alg not in allowed_values):
+        if self._configuration.client_side_validation and authentication_alg not in allowed_values:
             raise ValueError(
-                "Invalid value for `authentication_alg` ({0}), must be one of {1}"  # noqa: E501
-                .format(authentication_alg, allowed_values)
+                "Invalid value for `authentication_alg` ({0}), must be one of {1}".format(  # noqa: E501
+                    authentication_alg, allowed_values
+                )
             )
 
         self._authentication_alg = authentication_alg
@@ -185,11 +202,11 @@ class CreateSNMPDTOV3(object):
         :type: str
         """
         allowed_values = ["Undefined", "AES", "DES"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                privacy_alg not in allowed_values):
+        if self._configuration.client_side_validation and privacy_alg not in allowed_values:
             raise ValueError(
-                "Invalid value for `privacy_alg` ({0}), must be one of {1}"  # noqa: E501
-                .format(privacy_alg, allowed_values)
+                "Invalid value for `privacy_alg` ({0}), must be one of {1}".format(  # noqa: E501
+                    privacy_alg, allowed_values
+                )
             )
 
         self._privacy_alg = privacy_alg
@@ -255,11 +272,11 @@ class CreateSNMPDTOV3(object):
         :type: str
         """
         allowed_values = ["Undefined", "Authentication", "AuthenticationAndPrivacy"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                security_level not in allowed_values):
+        if self._configuration.client_side_validation and security_level not in allowed_values:
             raise ValueError(
-                "Invalid value for `security_level` ({0}), must be one of {1}"  # noqa: E501
-                .format(security_level, allowed_values)
+                "Invalid value for `security_level` ({0}), must be one of {1}".format(  # noqa: E501
+                    security_level, allowed_values
+                )
             )
 
         self._security_level = security_level
@@ -324,12 +341,41 @@ class CreateSNMPDTOV3(object):
         :param device_type: The device_type of this CreateSNMPDTOV3.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Undefined", "Router", "Printer", "Switch", "Print_server", "UPS", "CheckPoint", "Other", "Linux_device", "NAS", "File_server", "Storage", "Access_point", "NetworkBridge_Extender", "Hub", "Firewall", "Gateway", "Layer_3_Switch", "WAN_Accelerator", "Wireless_LAN_Controller", "Access_Server", "IP_Phone", "SAN_Switch", "Load_Balancer", "Web_Caching", "Management_Controller", "Management", "Tape_Library"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                device_type not in allowed_values):
+        allowed_values = [
+            "Undefined",
+            "Router",
+            "Printer",
+            "Switch",
+            "Print_server",
+            "UPS",
+            "CheckPoint",
+            "Other",
+            "Linux_device",
+            "NAS",
+            "File_server",
+            "Storage",
+            "Access_point",
+            "NetworkBridge_Extender",
+            "Hub",
+            "Firewall",
+            "Gateway",
+            "Layer_3_Switch",
+            "WAN_Accelerator",
+            "Wireless_LAN_Controller",
+            "Access_Server",
+            "IP_Phone",
+            "SAN_Switch",
+            "Load_Balancer",
+            "Web_Caching",
+            "Management_Controller",
+            "Management",
+            "Tape_Library",
+        ]  # noqa: E501
+        if self._configuration.client_side_validation and device_type not in allowed_values:
             raise ValueError(
-                "Invalid value for `device_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(device_type, allowed_values)
+                "Invalid value for `device_type` ({0}), must be one of {1}".format(  # noqa: E501
+                    device_type, allowed_values
+                )
             )
 
         self._device_type = device_type
@@ -446,18 +492,16 @@ class CreateSNMPDTOV3(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(CreateSNMPDTOV3, dict):

@@ -33,22 +33,30 @@ class BlockMoneyContractQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'contract_amount': 'RateQueryDTO',
-        'primary_rate': 'RateQueryDTO',
-        'additional_rates': 'list[RateQueryDTO]',
-        'commit_rollover': 'bool',
-        'billing_period': 'str'
+        "contract_amount": "RateQueryDTO",
+        "primary_rate": "RateQueryDTO",
+        "additional_rates": "list[RateQueryDTO]",
+        "commit_rollover": "bool",
+        "billing_period": "str",
     }
 
     attribute_map = {
-        'contract_amount': 'ContractAmount',
-        'primary_rate': 'PrimaryRate',
-        'additional_rates': 'AdditionalRates',
-        'commit_rollover': 'CommitRollover',
-        'billing_period': 'BillingPeriod'
+        "contract_amount": "ContractAmount",
+        "primary_rate": "PrimaryRate",
+        "additional_rates": "AdditionalRates",
+        "commit_rollover": "CommitRollover",
+        "billing_period": "BillingPeriod",
     }
 
-    def __init__(self, contract_amount=None, primary_rate=None, additional_rates=None, commit_rollover=None, billing_period=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        contract_amount=None,
+        primary_rate=None,
+        additional_rates=None,
+        commit_rollover=None,
+        billing_period=None,
+        _configuration=None,
+    ):  # noqa: E501
         """BlockMoneyContractQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -174,12 +182,21 @@ class BlockMoneyContractQueryDTO(object):
         :param billing_period: The billing_period of this BlockMoneyContractQueryDTO.  # noqa: E501
         :type: str
         """
-        allowed_values = ["EndOfContractDuration", "Weekly", "BiWeekly", "Monthly", "Quarterly", "TwiceAYear", "Yearly", "OnDemand"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                billing_period not in allowed_values):
+        allowed_values = [
+            "EndOfContractDuration",
+            "Weekly",
+            "BiWeekly",
+            "Monthly",
+            "Quarterly",
+            "TwiceAYear",
+            "Yearly",
+            "OnDemand",
+        ]  # noqa: E501
+        if self._configuration.client_side_validation and billing_period not in allowed_values:
             raise ValueError(
-                "Invalid value for `billing_period` ({0}), must be one of {1}"  # noqa: E501
-                .format(billing_period, allowed_values)
+                "Invalid value for `billing_period` ({0}), must be one of {1}".format(  # noqa: E501
+                    billing_period, allowed_values
+                )
             )
 
         self._billing_period = billing_period
@@ -191,18 +208,16 @@ class BlockMoneyContractQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(BlockMoneyContractQueryDTO, dict):

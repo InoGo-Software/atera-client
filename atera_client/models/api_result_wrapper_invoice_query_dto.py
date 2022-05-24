@@ -33,26 +33,36 @@ class APIResultWrapperInvoiceQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'items': 'list[InvoiceQueryDTO]',
-        'total_item_count': 'int',
-        'page': 'int',
-        'items_in_page': 'int',
-        'total_pages': 'int',
-        'prev_link': 'str',
-        'next_link': 'str'
+        "items": "list[InvoiceQueryDTO]",
+        "total_item_count": "int",
+        "page": "int",
+        "items_in_page": "int",
+        "total_pages": "int",
+        "prev_link": "str",
+        "next_link": "str",
     }
 
     attribute_map = {
-        'items': 'items',
-        'total_item_count': 'totalItemCount',
-        'page': 'page',
-        'items_in_page': 'itemsInPage',
-        'total_pages': 'totalPages',
-        'prev_link': 'prevLink',
-        'next_link': 'nextLink'
+        "items": "items",
+        "total_item_count": "totalItemCount",
+        "page": "page",
+        "items_in_page": "itemsInPage",
+        "total_pages": "totalPages",
+        "prev_link": "prevLink",
+        "next_link": "nextLink",
     }
 
-    def __init__(self, items=None, total_item_count=None, page=None, items_in_page=None, total_pages=None, prev_link=None, next_link=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        items=None,
+        total_item_count=None,
+        page=None,
+        items_in_page=None,
+        total_pages=None,
+        prev_link=None,
+        next_link=None,
+        _configuration=None,
+    ):  # noqa: E501
         """APIResultWrapperInvoiceQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -246,18 +256,16 @@ class APIResultWrapperInvoiceQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(APIResultWrapperInvoiceQueryDTO, dict):

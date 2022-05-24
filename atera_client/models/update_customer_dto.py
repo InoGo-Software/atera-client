@@ -33,40 +33,57 @@ class UpdateCustomerDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'customer_name': 'str',
-        'business_number': 'str',
-        'domain': 'str',
-        'address': 'str',
-        'city': 'str',
-        'state': 'str',
-        'country': 'str',
-        'phone': 'str',
-        'fax': 'str',
-        'notes': 'str',
-        'links': 'str',
-        'longitude': 'float',
-        'latitude': 'float',
-        'zip_code_str': 'str'
+        "customer_name": "str",
+        "business_number": "str",
+        "domain": "str",
+        "address": "str",
+        "city": "str",
+        "state": "str",
+        "country": "str",
+        "phone": "str",
+        "fax": "str",
+        "notes": "str",
+        "links": "str",
+        "longitude": "float",
+        "latitude": "float",
+        "zip_code_str": "str",
     }
 
     attribute_map = {
-        'customer_name': 'CustomerName',
-        'business_number': 'BusinessNumber',
-        'domain': 'Domain',
-        'address': 'Address',
-        'city': 'City',
-        'state': 'State',
-        'country': 'Country',
-        'phone': 'Phone',
-        'fax': 'Fax',
-        'notes': 'Notes',
-        'links': 'Links',
-        'longitude': 'Longitude',
-        'latitude': 'Latitude',
-        'zip_code_str': 'ZipCodeStr'
+        "customer_name": "CustomerName",
+        "business_number": "BusinessNumber",
+        "domain": "Domain",
+        "address": "Address",
+        "city": "City",
+        "state": "State",
+        "country": "Country",
+        "phone": "Phone",
+        "fax": "Fax",
+        "notes": "Notes",
+        "links": "Links",
+        "longitude": "Longitude",
+        "latitude": "Latitude",
+        "zip_code_str": "ZipCodeStr",
     }
 
-    def __init__(self, customer_name=None, business_number=None, domain=None, address=None, city=None, state=None, country=None, phone=None, fax=None, notes=None, links=None, longitude=None, latitude=None, zip_code_str=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        customer_name=None,
+        business_number=None,
+        domain=None,
+        address=None,
+        city=None,
+        state=None,
+        country=None,
+        phone=None,
+        fax=None,
+        notes=None,
+        links=None,
+        longitude=None,
+        latitude=None,
+        zip_code_str=None,
+        _configuration=None,
+    ):  # noqa: E501
         """UpdateCustomerDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -418,18 +435,16 @@ class UpdateCustomerDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(UpdateCustomerDTO, dict):

@@ -33,32 +33,45 @@ class TcpDeviceQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'device_id': 'int',
-        'device_guid': 'str',
-        'hostname': 'str',
-        'customer_id': 'int',
-        'customer_name': 'str',
-        'folder_id': 'int',
-        'monitoring_agent_id': 'int',
-        'monitored': 'bool',
-        'ports': 'list[PortQueryDTO]'
+        "name": "str",
+        "device_id": "int",
+        "device_guid": "str",
+        "hostname": "str",
+        "customer_id": "int",
+        "customer_name": "str",
+        "folder_id": "int",
+        "monitoring_agent_id": "int",
+        "monitored": "bool",
+        "ports": "list[PortQueryDTO]",
     }
 
     attribute_map = {
-        'name': 'Name',
-        'device_id': 'DeviceID',
-        'device_guid': 'DeviceGuid',
-        'hostname': 'Hostname',
-        'customer_id': 'CustomerID',
-        'customer_name': 'CustomerName',
-        'folder_id': 'FolderID',
-        'monitoring_agent_id': 'MonitoringAgentID',
-        'monitored': 'Monitored',
-        'ports': 'Ports'
+        "name": "Name",
+        "device_id": "DeviceID",
+        "device_guid": "DeviceGuid",
+        "hostname": "Hostname",
+        "customer_id": "CustomerID",
+        "customer_name": "CustomerName",
+        "folder_id": "FolderID",
+        "monitoring_agent_id": "MonitoringAgentID",
+        "monitored": "Monitored",
+        "ports": "Ports",
     }
 
-    def __init__(self, name=None, device_id=None, device_guid=None, hostname=None, customer_id=None, customer_name=None, folder_id=None, monitoring_agent_id=None, monitored=None, ports=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        name=None,
+        device_id=None,
+        device_guid=None,
+        hostname=None,
+        customer_id=None,
+        customer_name=None,
+        folder_id=None,
+        monitoring_agent_id=None,
+        monitored=None,
+        ports=None,
+        _configuration=None,
+    ):  # noqa: E501
         """TcpDeviceQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -314,18 +327,16 @@ class TcpDeviceQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(TcpDeviceQueryDTO, dict):

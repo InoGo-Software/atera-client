@@ -33,24 +33,33 @@ class TicketDurationQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'off_sla_duration_hours': 'float',
-        'off_site_duration_hours': 'float',
-        'on_sla_duration_hours': 'float',
-        'on_site_duration_hours': 'float',
-        'total_duration_hours': 'float',
-        'ticket_id': 'int'
+        "off_sla_duration_hours": "float",
+        "off_site_duration_hours": "float",
+        "on_sla_duration_hours": "float",
+        "on_site_duration_hours": "float",
+        "total_duration_hours": "float",
+        "ticket_id": "int",
     }
 
     attribute_map = {
-        'off_sla_duration_hours': 'OffSLADurationHours',
-        'off_site_duration_hours': 'OffSiteDurationHours',
-        'on_sla_duration_hours': 'OnSLADurationHours',
-        'on_site_duration_hours': 'OnSiteDurationHours',
-        'total_duration_hours': 'TotalDurationHours',
-        'ticket_id': 'ticketId'
+        "off_sla_duration_hours": "OffSLADurationHours",
+        "off_site_duration_hours": "OffSiteDurationHours",
+        "on_sla_duration_hours": "OnSLADurationHours",
+        "on_site_duration_hours": "OnSiteDurationHours",
+        "total_duration_hours": "TotalDurationHours",
+        "ticket_id": "ticketId",
     }
 
-    def __init__(self, off_sla_duration_hours=None, off_site_duration_hours=None, on_sla_duration_hours=None, on_site_duration_hours=None, total_duration_hours=None, ticket_id=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        off_sla_duration_hours=None,
+        off_site_duration_hours=None,
+        on_sla_duration_hours=None,
+        on_site_duration_hours=None,
+        total_duration_hours=None,
+        ticket_id=None,
+        _configuration=None,
+    ):  # noqa: E501
         """TicketDurationQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -210,18 +219,16 @@ class TicketDurationQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(TicketDurationQueryDTO, dict):

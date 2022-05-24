@@ -33,50 +33,72 @@ class AlertQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'alert_id': 'int',
-        'code': 'int',
-        'source': 'str',
-        'title': 'str',
-        'severity': 'str',
-        'created': 'datetime',
-        'snoozed_end_date': 'datetime',
-        'device_guid': 'str',
-        'additional_info': 'str',
-        'archived': 'bool',
-        'alert_category_id': 'str',
-        'archived_date': 'datetime',
-        'ticket_id': 'int',
-        'alert_message': 'str',
-        'device_name': 'str',
-        'customer_id': 'int',
-        'customer_name': 'str',
-        'folder_id': 'int',
-        'polling_cycles_count': 'int'
+        "alert_id": "int",
+        "code": "int",
+        "source": "str",
+        "title": "str",
+        "severity": "str",
+        "created": "datetime",
+        "snoozed_end_date": "datetime",
+        "device_guid": "str",
+        "additional_info": "str",
+        "archived": "bool",
+        "alert_category_id": "str",
+        "archived_date": "datetime",
+        "ticket_id": "int",
+        "alert_message": "str",
+        "device_name": "str",
+        "customer_id": "int",
+        "customer_name": "str",
+        "folder_id": "int",
+        "polling_cycles_count": "int",
     }
 
     attribute_map = {
-        'alert_id': 'AlertID',
-        'code': 'Code',
-        'source': 'Source',
-        'title': 'Title',
-        'severity': 'Severity',
-        'created': 'Created',
-        'snoozed_end_date': 'SnoozedEndDate',
-        'device_guid': 'DeviceGuid',
-        'additional_info': 'AdditionalInfo',
-        'archived': 'Archived',
-        'alert_category_id': 'AlertCategoryID',
-        'archived_date': 'ArchivedDate',
-        'ticket_id': 'TicketID',
-        'alert_message': 'AlertMessage',
-        'device_name': 'DeviceName',
-        'customer_id': 'CustomerID',
-        'customer_name': 'CustomerName',
-        'folder_id': 'FolderID',
-        'polling_cycles_count': 'PollingCyclesCount'
+        "alert_id": "AlertID",
+        "code": "Code",
+        "source": "Source",
+        "title": "Title",
+        "severity": "Severity",
+        "created": "Created",
+        "snoozed_end_date": "SnoozedEndDate",
+        "device_guid": "DeviceGuid",
+        "additional_info": "AdditionalInfo",
+        "archived": "Archived",
+        "alert_category_id": "AlertCategoryID",
+        "archived_date": "ArchivedDate",
+        "ticket_id": "TicketID",
+        "alert_message": "AlertMessage",
+        "device_name": "DeviceName",
+        "customer_id": "CustomerID",
+        "customer_name": "CustomerName",
+        "folder_id": "FolderID",
+        "polling_cycles_count": "PollingCyclesCount",
     }
 
-    def __init__(self, alert_id=None, code=None, source=None, title=None, severity=None, created=None, snoozed_end_date=None, device_guid=None, additional_info=None, archived=None, alert_category_id=None, archived_date=None, ticket_id=None, alert_message=None, device_name=None, customer_id=None, customer_name=None, folder_id=None, polling_cycles_count=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        alert_id=None,
+        code=None,
+        source=None,
+        title=None,
+        severity=None,
+        created=None,
+        snoozed_end_date=None,
+        device_guid=None,
+        additional_info=None,
+        archived=None,
+        alert_category_id=None,
+        archived_date=None,
+        ticket_id=None,
+        alert_message=None,
+        device_name=None,
+        customer_id=None,
+        customer_name=None,
+        folder_id=None,
+        polling_cycles_count=None,
+        _configuration=None,
+    ):  # noqa: E501
         """AlertQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -245,11 +267,9 @@ class AlertQueryDTO(object):
         :type: str
         """
         allowed_values = ["Information", "Warning", "Critical"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                severity not in allowed_values):
+        if self._configuration.client_side_validation and severity not in allowed_values:
             raise ValueError(
-                "Invalid value for `severity` ({0}), must be one of {1}"  # noqa: E501
-                .format(severity, allowed_values)
+                "Invalid value for `severity` ({0}), must be one of {1}".format(severity, allowed_values)  # noqa: E501
             )
 
         self._severity = severity
@@ -378,11 +398,11 @@ class AlertQueryDTO(object):
         :type: str
         """
         allowed_values = ["Hardware", "Disk", "Availability", "Performance", "Exchange", "General"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                alert_category_id not in allowed_values):
+        if self._configuration.client_side_validation and alert_category_id not in allowed_values:
             raise ValueError(
-                "Invalid value for `alert_category_id` ({0}), must be one of {1}"  # noqa: E501
-                .format(alert_category_id, allowed_values)
+                "Invalid value for `alert_category_id` ({0}), must be one of {1}".format(  # noqa: E501
+                    alert_category_id, allowed_values
+                )
             )
 
         self._alert_category_id = alert_category_id
@@ -562,18 +582,16 @@ class AlertQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(AlertQueryDTO, dict):

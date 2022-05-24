@@ -48,8 +48,8 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.custom_values_get_with_http_info(row_id, **kwargs)  # noqa: E501
         else:
             (data) = self.custom_values_get_with_http_info(row_id, **kwargs)  # noqa: E501
@@ -71,31 +71,29 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['row_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["row_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_get" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method custom_values_get" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'row_id' is set
-        if self.api_client.client_side_validation and ('row_id' not in params or
-                                                       params['row_id'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "row_id" not in params or params["row_id"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `row_id` when calling `custom_values_get`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'row_id' in params:
-            path_params['rowId'] = params['row_id']  # noqa: E501
+        if "row_id" in params:
+            path_params["rowId"] = params["row_id"]  # noqa: E501
 
         query_params = []
 
@@ -106,27 +104,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/{rowId}', 'GET',
+            "/api/v3/customvalues/{rowId}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomValueQueryDTO]',  # noqa: E501
+            response_type="list[CustomValueQueryDTO]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_get_agent_field(self, agent_id, field_name, **kwargs):  # noqa: E501
         """Find custom field value for specified agent  # noqa: E501
@@ -144,8 +145,8 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.custom_values_get_agent_field_with_http_info(agent_id, field_name, **kwargs)  # noqa: E501
         else:
             (data) = self.custom_values_get_agent_field_with_http_info(agent_id, field_name, **kwargs)  # noqa: E501
@@ -168,37 +169,42 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['agent_id', 'field_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["agent_id", "field_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_get_agent_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_get_agent_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'agent_id' is set
-        if self.api_client.client_side_validation and ('agent_id' not in params or
-                                                       params['agent_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent_id` when calling `custom_values_get_agent_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent_id" not in params or params["agent_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent_id` when calling `custom_values_get_agent_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_get_agent_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_get_agent_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'agent_id' in params:
-            path_params['agentId'] = params['agent_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "agent_id" in params:
+            path_params["agentId"] = params["agent_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -209,27 +215,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/agentfield/{agentId}/{fieldName}', 'GET',
+            "/api/v3/customvalues/agentfield/{agentId}/{fieldName}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomValueQueryDTO]',  # noqa: E501
+            response_type="list[CustomValueQueryDTO]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_get_contact_field(self, contact_id, field_name, **kwargs):  # noqa: E501
         """Find custom field value for specified contact  # noqa: E501
@@ -247,8 +256,8 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.custom_values_get_contact_field_with_http_info(contact_id, field_name, **kwargs)  # noqa: E501
         else:
             (data) = self.custom_values_get_contact_field_with_http_info(contact_id, field_name, **kwargs)  # noqa: E501
@@ -271,37 +280,42 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['contact_id', 'field_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["contact_id", "field_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_get_contact_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_get_contact_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'contact_id' is set
-        if self.api_client.client_side_validation and ('contact_id' not in params or
-                                                       params['contact_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contact_id` when calling `custom_values_get_contact_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "contact_id" not in params or params["contact_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `contact_id` when calling `custom_values_get_contact_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_get_contact_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_get_contact_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'contact_id' in params:
-            path_params['contactId'] = params['contact_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "contact_id" in params:
+            path_params["contactId"] = params["contact_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -312,27 +326,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/contactfield/{contactId}/{fieldName}', 'GET',
+            "/api/v3/customvalues/contactfield/{contactId}/{fieldName}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomValueQueryDTO]',  # noqa: E501
+            response_type="list[CustomValueQueryDTO]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_get_contract_field(self, contract_id, field_name, **kwargs):  # noqa: E501
         """Find custom field value for specified contract  # noqa: E501
@@ -350,11 +367,13 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.custom_values_get_contract_field_with_http_info(contract_id, field_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.custom_values_get_contract_field_with_http_info(contract_id, field_name, **kwargs)  # noqa: E501
+            (data) = self.custom_values_get_contract_field_with_http_info(
+                contract_id, field_name, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_get_contract_field_with_http_info(self, contract_id, field_name, **kwargs):  # noqa: E501
@@ -374,37 +393,42 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['contract_id', 'field_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["contract_id", "field_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_get_contract_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_get_contract_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'contract_id' is set
-        if self.api_client.client_side_validation and ('contract_id' not in params or
-                                                       params['contract_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contract_id` when calling `custom_values_get_contract_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "contract_id" not in params or params["contract_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `contract_id` when calling `custom_values_get_contract_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_get_contract_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_get_contract_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'contract_id' in params:
-            path_params['contractId'] = params['contract_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "contract_id" in params:
+            path_params["contractId"] = params["contract_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -415,27 +439,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/contractfield/{contractId}/{fieldName}', 'GET',
+            "/api/v3/customvalues/contractfield/{contractId}/{fieldName}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomValueQueryDTO]',  # noqa: E501
+            response_type="list[CustomValueQueryDTO]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_get_custom_fields(self, **kwargs):  # noqa: E501
         """Get list of custom field and value options  # noqa: E501
@@ -450,8 +477,8 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.custom_values_get_custom_fields_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.custom_values_get_custom_fields_with_http_info(**kwargs)  # noqa: E501
@@ -472,20 +499,19 @@ class CustomValuesApi(object):
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_get_custom_fields" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_get_custom_fields" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
@@ -500,27 +526,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/customfields', 'GET',
+            "/api/v3/customvalues/customfields",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomFieldQueryDTO]',  # noqa: E501
+            response_type="list[CustomFieldQueryDTO]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_get_customer_field(self, customer_id, field_name, **kwargs):  # noqa: E501
         """Find custom field value for specified customer  # noqa: E501
@@ -538,11 +567,13 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.custom_values_get_customer_field_with_http_info(customer_id, field_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.custom_values_get_customer_field_with_http_info(customer_id, field_name, **kwargs)  # noqa: E501
+            (data) = self.custom_values_get_customer_field_with_http_info(
+                customer_id, field_name, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_get_customer_field_with_http_info(self, customer_id, field_name, **kwargs):  # noqa: E501
@@ -562,37 +593,42 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['customer_id', 'field_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["customer_id", "field_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_get_customer_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_get_customer_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'customer_id' is set
-        if self.api_client.client_side_validation and ('customer_id' not in params or
-                                                       params['customer_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `customer_id` when calling `custom_values_get_customer_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "customer_id" not in params or params["customer_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `customer_id` when calling `custom_values_get_customer_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_get_customer_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_get_customer_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'customer_id' in params:
-            path_params['customerId'] = params['customer_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "customer_id" in params:
+            path_params["customerId"] = params["customer_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -603,27 +639,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/customerfield/{customerId}/{fieldName}', 'GET',
+            "/api/v3/customvalues/customerfield/{customerId}/{fieldName}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomValueQueryDTO]',  # noqa: E501
+            response_type="list[CustomValueQueryDTO]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_get_generic_field(self, generic_device_id, field_name, **kwargs):  # noqa: E501
         """Find custom field value for specified generic  # noqa: E501
@@ -641,11 +680,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_get_generic_field_with_http_info(generic_device_id, field_name, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_get_generic_field_with_http_info(
+                generic_device_id, field_name, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_get_generic_field_with_http_info(generic_device_id, field_name, **kwargs)  # noqa: E501
+            (data) = self.custom_values_get_generic_field_with_http_info(
+                generic_device_id, field_name, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_get_generic_field_with_http_info(self, generic_device_id, field_name, **kwargs):  # noqa: E501
@@ -665,37 +708,42 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['generic_device_id', 'field_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["generic_device_id", "field_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_get_generic_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_get_generic_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'generic_device_id' is set
-        if self.api_client.client_side_validation and ('generic_device_id' not in params or
-                                                       params['generic_device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `generic_device_id` when calling `custom_values_get_generic_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "generic_device_id" not in params or params["generic_device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `generic_device_id` when calling `custom_values_get_generic_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_get_generic_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_get_generic_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'generic_device_id' in params:
-            path_params['genericDeviceId'] = params['generic_device_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "generic_device_id" in params:
+            path_params["genericDeviceId"] = params["generic_device_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -706,27 +754,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/genericfield/{genericDeviceId}/{fieldName}', 'GET',
+            "/api/v3/customvalues/genericfield/{genericDeviceId}/{fieldName}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomValueQueryDTO]',  # noqa: E501
+            response_type="list[CustomValueQueryDTO]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_get_http_field(self, http_device_id, field_name, **kwargs):  # noqa: E501
         """Find custom field value for specified HTTP  # noqa: E501
@@ -744,11 +795,13 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.custom_values_get_http_field_with_http_info(http_device_id, field_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.custom_values_get_http_field_with_http_info(http_device_id, field_name, **kwargs)  # noqa: E501
+            (data) = self.custom_values_get_http_field_with_http_info(
+                http_device_id, field_name, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_get_http_field_with_http_info(self, http_device_id, field_name, **kwargs):  # noqa: E501
@@ -768,37 +821,42 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['http_device_id', 'field_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["http_device_id", "field_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_get_http_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_get_http_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'http_device_id' is set
-        if self.api_client.client_side_validation and ('http_device_id' not in params or
-                                                       params['http_device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `http_device_id` when calling `custom_values_get_http_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "http_device_id" not in params or params["http_device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `http_device_id` when calling `custom_values_get_http_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_get_http_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_get_http_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'http_device_id' in params:
-            path_params['httpDeviceId'] = params['http_device_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "http_device_id" in params:
+            path_params["httpDeviceId"] = params["http_device_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -809,27 +867,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/httpfield/{httpDeviceId}/{fieldName}', 'GET',
+            "/api/v3/customvalues/httpfield/{httpDeviceId}/{fieldName}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomValueQueryDTO]',  # noqa: E501
+            response_type="list[CustomValueQueryDTO]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_get_sla_field(self, sla_id, field_name, **kwargs):  # noqa: E501
         """Find custom field value for specified SLA  # noqa: E501
@@ -847,8 +908,8 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.custom_values_get_sla_field_with_http_info(sla_id, field_name, **kwargs)  # noqa: E501
         else:
             (data) = self.custom_values_get_sla_field_with_http_info(sla_id, field_name, **kwargs)  # noqa: E501
@@ -871,37 +932,42 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['sla_id', 'field_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["sla_id", "field_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_get_sla_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_get_sla_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'sla_id' is set
-        if self.api_client.client_side_validation and ('sla_id' not in params or
-                                                       params['sla_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `sla_id` when calling `custom_values_get_sla_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "sla_id" not in params or params["sla_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `sla_id` when calling `custom_values_get_sla_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_get_sla_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_get_sla_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'sla_id' in params:
-            path_params['slaId'] = params['sla_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "sla_id" in params:
+            path_params["slaId"] = params["sla_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -912,27 +978,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/slafield/{slaId}/{fieldName}', 'GET',
+            "/api/v3/customvalues/slafield/{slaId}/{fieldName}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomValueQueryDTO]',  # noqa: E501
+            response_type="list[CustomValueQueryDTO]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_get_snmp_field(self, snmp_device_id, field_name, **kwargs):  # noqa: E501
         """Find custom field value for specified SNMP  # noqa: E501
@@ -950,11 +1019,13 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.custom_values_get_snmp_field_with_http_info(snmp_device_id, field_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.custom_values_get_snmp_field_with_http_info(snmp_device_id, field_name, **kwargs)  # noqa: E501
+            (data) = self.custom_values_get_snmp_field_with_http_info(
+                snmp_device_id, field_name, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_get_snmp_field_with_http_info(self, snmp_device_id, field_name, **kwargs):  # noqa: E501
@@ -974,37 +1045,42 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['snmp_device_id', 'field_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["snmp_device_id", "field_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_get_snmp_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_get_snmp_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'snmp_device_id' is set
-        if self.api_client.client_side_validation and ('snmp_device_id' not in params or
-                                                       params['snmp_device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `snmp_device_id` when calling `custom_values_get_snmp_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "snmp_device_id" not in params or params["snmp_device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `snmp_device_id` when calling `custom_values_get_snmp_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_get_snmp_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_get_snmp_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'snmp_device_id' in params:
-            path_params['snmpDeviceId'] = params['snmp_device_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "snmp_device_id" in params:
+            path_params["snmpDeviceId"] = params["snmp_device_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -1015,27 +1091,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/snmpfield/{snmpDeviceId}/{fieldName}', 'GET',
+            "/api/v3/customvalues/snmpfield/{snmpDeviceId}/{fieldName}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomValueQueryDTO]',  # noqa: E501
+            response_type="list[CustomValueQueryDTO]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_get_tcp_field(self, tcp_device_id, field_name, **kwargs):  # noqa: E501
         """Find custom field value for specified TCP  # noqa: E501
@@ -1053,8 +1132,8 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.custom_values_get_tcp_field_with_http_info(tcp_device_id, field_name, **kwargs)  # noqa: E501
         else:
             (data) = self.custom_values_get_tcp_field_with_http_info(tcp_device_id, field_name, **kwargs)  # noqa: E501
@@ -1077,37 +1156,42 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['tcp_device_id', 'field_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["tcp_device_id", "field_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_get_tcp_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_get_tcp_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'tcp_device_id' is set
-        if self.api_client.client_side_validation and ('tcp_device_id' not in params or
-                                                       params['tcp_device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `tcp_device_id` when calling `custom_values_get_tcp_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "tcp_device_id" not in params or params["tcp_device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `tcp_device_id` when calling `custom_values_get_tcp_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_get_tcp_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_get_tcp_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'tcp_device_id' in params:
-            path_params['tcpDeviceId'] = params['tcp_device_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "tcp_device_id" in params:
+            path_params["tcpDeviceId"] = params["tcp_device_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -1118,27 +1202,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/tcpfield/{tcpDeviceId}/{fieldName}', 'GET',
+            "/api/v3/customvalues/tcpfield/{tcpDeviceId}/{fieldName}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomValueQueryDTO]',  # noqa: E501
+            response_type="list[CustomValueQueryDTO]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_get_ticket_field(self, ticket_id, field_name, **kwargs):  # noqa: E501
         """Find custom field value for specified ticket  # noqa: E501
@@ -1156,8 +1243,8 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.custom_values_get_ticket_field_with_http_info(ticket_id, field_name, **kwargs)  # noqa: E501
         else:
             (data) = self.custom_values_get_ticket_field_with_http_info(ticket_id, field_name, **kwargs)  # noqa: E501
@@ -1180,37 +1267,42 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['ticket_id', 'field_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["ticket_id", "field_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_get_ticket_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_get_ticket_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'ticket_id' is set
-        if self.api_client.client_side_validation and ('ticket_id' not in params or
-                                                       params['ticket_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `ticket_id` when calling `custom_values_get_ticket_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "ticket_id" not in params or params["ticket_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `ticket_id` when calling `custom_values_get_ticket_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_get_ticket_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_get_ticket_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'ticket_id' in params:
-            path_params['ticketId'] = params['ticket_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "ticket_id" in params:
+            path_params["ticketId"] = params["ticket_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -1221,27 +1313,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/ticketfield/{ticketId}/{fieldName}', 'GET',
+            "/api/v3/customvalues/ticketfield/{ticketId}/{fieldName}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomValueQueryDTO]',  # noqa: E501
+            response_type="list[CustomValueQueryDTO]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_agent_field(self, agent_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified Agent  # noqa: E501
@@ -1259,11 +1354,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_agent_field_with_http_info(agent_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_agent_field_with_http_info(
+                agent_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_agent_field_with_http_info(agent_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_agent_field_with_http_info(
+                agent_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_agent_field_with_http_info(self, agent_id, field_name, value, **kwargs):  # noqa: E501
@@ -1283,41 +1382,47 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['agent_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["agent_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_agent_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_agent_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'agent_id' is set
-        if self.api_client.client_side_validation and ('agent_id' not in params or
-                                                       params['agent_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent_id` when calling `custom_values_set_agent_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent_id" not in params or params["agent_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent_id` when calling `custom_values_set_agent_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_agent_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_agent_field`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_agent_field`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_agent_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'agent_id' in params:
-            path_params['agentId'] = params['agent_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "agent_id" in params:
+            path_params["agentId"] = params["agent_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -1327,34 +1432,38 @@ class CustomValuesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'value' in params:
-            body_params = params['value']
+        if "value" in params:
+            body_params = params["value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/agentfield/{agentId}/{fieldName}', 'PUT',
+            "/api/v3/customvalues/agentfield/{agentId}/{fieldName}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_agent_field_0(self, agent_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified Agent  # noqa: E501
@@ -1372,11 +1481,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_agent_field_0_with_http_info(agent_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_agent_field_0_with_http_info(
+                agent_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_agent_field_0_with_http_info(agent_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_agent_field_0_with_http_info(
+                agent_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_agent_field_0_with_http_info(self, agent_id, field_name, value, **kwargs):  # noqa: E501
@@ -1396,43 +1509,49 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['agent_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["agent_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_agent_field_0" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_agent_field_0" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'agent_id' is set
-        if self.api_client.client_side_validation and ('agent_id' not in params or
-                                                       params['agent_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent_id` when calling `custom_values_set_agent_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent_id" not in params or params["agent_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent_id` when calling `custom_values_set_agent_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_agent_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_agent_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_agent_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_agent_field_0`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'agent_id' in params:
-            path_params['agentId'] = params['agent_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
-        if 'value' in params:
-            path_params['value'] = params['value']  # noqa: E501
+        if "agent_id" in params:
+            path_params["agentId"] = params["agent_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
+        if "value" in params:
+            path_params["value"] = params["value"]  # noqa: E501
 
         query_params = []
 
@@ -1443,27 +1562,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/agentfield/{agentId}/{fieldName}/{value}', 'PUT',
+            "/api/v3/customvalues/agentfield/{agentId}/{fieldName}/{value}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_contact_field(self, contact_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified Contact  # noqa: E501
@@ -1481,11 +1603,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_contact_field_with_http_info(contact_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_contact_field_with_http_info(
+                contact_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_contact_field_with_http_info(contact_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_contact_field_with_http_info(
+                contact_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_contact_field_with_http_info(self, contact_id, field_name, value, **kwargs):  # noqa: E501
@@ -1505,41 +1631,47 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['contact_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["contact_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_contact_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_contact_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'contact_id' is set
-        if self.api_client.client_side_validation and ('contact_id' not in params or
-                                                       params['contact_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contact_id` when calling `custom_values_set_contact_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "contact_id" not in params or params["contact_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `contact_id` when calling `custom_values_set_contact_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_contact_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_contact_field`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_contact_field`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_contact_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'contact_id' in params:
-            path_params['contactId'] = params['contact_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "contact_id" in params:
+            path_params["contactId"] = params["contact_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -1549,34 +1681,38 @@ class CustomValuesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'value' in params:
-            body_params = params['value']
+        if "value" in params:
+            body_params = params["value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/contactfield/{contactId}/{fieldName}', 'PUT',
+            "/api/v3/customvalues/contactfield/{contactId}/{fieldName}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_contact_field_0(self, contact_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified Contact  # noqa: E501
@@ -1594,11 +1730,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_contact_field_0_with_http_info(contact_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_contact_field_0_with_http_info(
+                contact_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_contact_field_0_with_http_info(contact_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_contact_field_0_with_http_info(
+                contact_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_contact_field_0_with_http_info(self, contact_id, field_name, value, **kwargs):  # noqa: E501
@@ -1618,43 +1758,49 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['contact_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["contact_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_contact_field_0" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_contact_field_0" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'contact_id' is set
-        if self.api_client.client_side_validation and ('contact_id' not in params or
-                                                       params['contact_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contact_id` when calling `custom_values_set_contact_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "contact_id" not in params or params["contact_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `contact_id` when calling `custom_values_set_contact_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_contact_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_contact_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_contact_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_contact_field_0`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'contact_id' in params:
-            path_params['contactId'] = params['contact_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
-        if 'value' in params:
-            path_params['value'] = params['value']  # noqa: E501
+        if "contact_id" in params:
+            path_params["contactId"] = params["contact_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
+        if "value" in params:
+            path_params["value"] = params["value"]  # noqa: E501
 
         query_params = []
 
@@ -1665,27 +1811,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/contactfield/{contactId}/{fieldName}/{value}', 'PUT',
+            "/api/v3/customvalues/contactfield/{contactId}/{fieldName}/{value}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_contract_field(self, contract_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified Contract  # noqa: E501
@@ -1703,11 +1852,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_contract_field_with_http_info(contract_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_contract_field_with_http_info(
+                contract_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_contract_field_with_http_info(contract_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_contract_field_with_http_info(
+                contract_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_contract_field_with_http_info(self, contract_id, field_name, value, **kwargs):  # noqa: E501
@@ -1727,41 +1880,47 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['contract_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["contract_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_contract_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_contract_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'contract_id' is set
-        if self.api_client.client_side_validation and ('contract_id' not in params or
-                                                       params['contract_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contract_id` when calling `custom_values_set_contract_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "contract_id" not in params or params["contract_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `contract_id` when calling `custom_values_set_contract_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_contract_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_contract_field`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_contract_field`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_contract_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'contract_id' in params:
-            path_params['contractId'] = params['contract_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "contract_id" in params:
+            path_params["contractId"] = params["contract_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -1771,34 +1930,38 @@ class CustomValuesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'value' in params:
-            body_params = params['value']
+        if "value" in params:
+            body_params = params["value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/contractfield/{contractId}/{fieldName}', 'PUT',
+            "/api/v3/customvalues/contractfield/{contractId}/{fieldName}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_contract_field_0(self, contract_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified Contract  # noqa: E501
@@ -1816,11 +1979,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_contract_field_0_with_http_info(contract_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_contract_field_0_with_http_info(
+                contract_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_contract_field_0_with_http_info(contract_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_contract_field_0_with_http_info(
+                contract_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_contract_field_0_with_http_info(self, contract_id, field_name, value, **kwargs):  # noqa: E501
@@ -1840,43 +2007,49 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['contract_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["contract_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_contract_field_0" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_contract_field_0" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'contract_id' is set
-        if self.api_client.client_side_validation and ('contract_id' not in params or
-                                                       params['contract_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contract_id` when calling `custom_values_set_contract_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "contract_id" not in params or params["contract_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `contract_id` when calling `custom_values_set_contract_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_contract_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_contract_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_contract_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_contract_field_0`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'contract_id' in params:
-            path_params['contractId'] = params['contract_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
-        if 'value' in params:
-            path_params['value'] = params['value']  # noqa: E501
+        if "contract_id" in params:
+            path_params["contractId"] = params["contract_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
+        if "value" in params:
+            path_params["value"] = params["value"]  # noqa: E501
 
         query_params = []
 
@@ -1887,27 +2060,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/contractfield/{contractId}/{fieldName}/{value}', 'PUT',
+            "/api/v3/customvalues/contractfield/{contractId}/{fieldName}/{value}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_customer_field(self, customer_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified Customer  # noqa: E501
@@ -1925,11 +2101,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_customer_field_with_http_info(customer_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_customer_field_with_http_info(
+                customer_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_customer_field_with_http_info(customer_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_customer_field_with_http_info(
+                customer_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_customer_field_with_http_info(self, customer_id, field_name, value, **kwargs):  # noqa: E501
@@ -1949,41 +2129,47 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['customer_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["customer_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_customer_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_customer_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'customer_id' is set
-        if self.api_client.client_side_validation and ('customer_id' not in params or
-                                                       params['customer_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `customer_id` when calling `custom_values_set_customer_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "customer_id" not in params or params["customer_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `customer_id` when calling `custom_values_set_customer_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_customer_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_customer_field`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_customer_field`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_customer_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'customer_id' in params:
-            path_params['customerId'] = params['customer_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "customer_id" in params:
+            path_params["customerId"] = params["customer_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -1993,34 +2179,38 @@ class CustomValuesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'value' in params:
-            body_params = params['value']
+        if "value" in params:
+            body_params = params["value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/customerfield/{customerId}/{fieldName}', 'PUT',
+            "/api/v3/customvalues/customerfield/{customerId}/{fieldName}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_customer_field_0(self, customer_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified Customer  # noqa: E501
@@ -2038,11 +2228,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_customer_field_0_with_http_info(customer_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_customer_field_0_with_http_info(
+                customer_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_customer_field_0_with_http_info(customer_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_customer_field_0_with_http_info(
+                customer_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_customer_field_0_with_http_info(self, customer_id, field_name, value, **kwargs):  # noqa: E501
@@ -2062,43 +2256,49 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['customer_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["customer_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_customer_field_0" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_customer_field_0" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'customer_id' is set
-        if self.api_client.client_side_validation and ('customer_id' not in params or
-                                                       params['customer_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `customer_id` when calling `custom_values_set_customer_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "customer_id" not in params or params["customer_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `customer_id` when calling `custom_values_set_customer_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_customer_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_customer_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_customer_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_customer_field_0`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'customer_id' in params:
-            path_params['customerId'] = params['customer_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
-        if 'value' in params:
-            path_params['value'] = params['value']  # noqa: E501
+        if "customer_id" in params:
+            path_params["customerId"] = params["customer_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
+        if "value" in params:
+            path_params["value"] = params["value"]  # noqa: E501
 
         query_params = []
 
@@ -2109,27 +2309,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/customerfield/{customerId}/{fieldName}/{value}', 'PUT',
+            "/api/v3/customvalues/customerfield/{customerId}/{fieldName}/{value}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_generic_field(self, generic_device_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified Generic  # noqa: E501
@@ -2147,14 +2350,20 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_generic_field_with_http_info(generic_device_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_generic_field_with_http_info(
+                generic_device_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_generic_field_with_http_info(generic_device_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_generic_field_with_http_info(
+                generic_device_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
-    def custom_values_set_generic_field_with_http_info(self, generic_device_id, field_name, value, **kwargs):  # noqa: E501
+    def custom_values_set_generic_field_with_http_info(
+        self, generic_device_id, field_name, value, **kwargs
+    ):  # noqa: E501
         """Set value of custom field for specified Generic  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2171,41 +2380,47 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['generic_device_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["generic_device_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_generic_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_generic_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'generic_device_id' is set
-        if self.api_client.client_side_validation and ('generic_device_id' not in params or
-                                                       params['generic_device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `generic_device_id` when calling `custom_values_set_generic_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "generic_device_id" not in params or params["generic_device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `generic_device_id` when calling `custom_values_set_generic_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_generic_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_generic_field`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_generic_field`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_generic_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'generic_device_id' in params:
-            path_params['genericDeviceId'] = params['generic_device_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "generic_device_id" in params:
+            path_params["genericDeviceId"] = params["generic_device_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -2215,34 +2430,38 @@ class CustomValuesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'value' in params:
-            body_params = params['value']
+        if "value" in params:
+            body_params = params["value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/genericfield/{genericDeviceId}/{fieldName}', 'PUT',
+            "/api/v3/customvalues/genericfield/{genericDeviceId}/{fieldName}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_generic_field_0(self, generic_device_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified Generic  # noqa: E501
@@ -2260,14 +2479,20 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_generic_field_0_with_http_info(generic_device_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_generic_field_0_with_http_info(
+                generic_device_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_generic_field_0_with_http_info(generic_device_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_generic_field_0_with_http_info(
+                generic_device_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
-    def custom_values_set_generic_field_0_with_http_info(self, generic_device_id, field_name, value, **kwargs):  # noqa: E501
+    def custom_values_set_generic_field_0_with_http_info(
+        self, generic_device_id, field_name, value, **kwargs
+    ):  # noqa: E501
         """Set value of custom field for specified Generic  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2284,43 +2509,49 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['generic_device_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["generic_device_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_generic_field_0" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_generic_field_0" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'generic_device_id' is set
-        if self.api_client.client_side_validation and ('generic_device_id' not in params or
-                                                       params['generic_device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `generic_device_id` when calling `custom_values_set_generic_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "generic_device_id" not in params or params["generic_device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `generic_device_id` when calling `custom_values_set_generic_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_generic_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_generic_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_generic_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_generic_field_0`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'generic_device_id' in params:
-            path_params['genericDeviceId'] = params['generic_device_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
-        if 'value' in params:
-            path_params['value'] = params['value']  # noqa: E501
+        if "generic_device_id" in params:
+            path_params["genericDeviceId"] = params["generic_device_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
+        if "value" in params:
+            path_params["value"] = params["value"]  # noqa: E501
 
         query_params = []
 
@@ -2331,27 +2562,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/genericfield/{genericDeviceId}/{fieldName}/{value}', 'PUT',
+            "/api/v3/customvalues/genericfield/{genericDeviceId}/{fieldName}/{value}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_http_field(self, http_device_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified HTTP  # noqa: E501
@@ -2369,11 +2603,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_http_field_with_http_info(http_device_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_http_field_with_http_info(
+                http_device_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_http_field_with_http_info(http_device_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_http_field_with_http_info(
+                http_device_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_http_field_with_http_info(self, http_device_id, field_name, value, **kwargs):  # noqa: E501
@@ -2393,41 +2631,47 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['http_device_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["http_device_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_http_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_http_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'http_device_id' is set
-        if self.api_client.client_side_validation and ('http_device_id' not in params or
-                                                       params['http_device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `http_device_id` when calling `custom_values_set_http_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "http_device_id" not in params or params["http_device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `http_device_id` when calling `custom_values_set_http_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_http_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_http_field`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_http_field`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_http_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'http_device_id' in params:
-            path_params['httpDeviceId'] = params['http_device_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "http_device_id" in params:
+            path_params["httpDeviceId"] = params["http_device_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -2437,34 +2681,38 @@ class CustomValuesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'value' in params:
-            body_params = params['value']
+        if "value" in params:
+            body_params = params["value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/httpfield/{httpDeviceId}/{fieldName}', 'PUT',
+            "/api/v3/customvalues/httpfield/{httpDeviceId}/{fieldName}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_http_field_0(self, http_device_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified HTTP  # noqa: E501
@@ -2482,11 +2730,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_http_field_0_with_http_info(http_device_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_http_field_0_with_http_info(
+                http_device_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_http_field_0_with_http_info(http_device_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_http_field_0_with_http_info(
+                http_device_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_http_field_0_with_http_info(self, http_device_id, field_name, value, **kwargs):  # noqa: E501
@@ -2506,43 +2758,49 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['http_device_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["http_device_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_http_field_0" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_http_field_0" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'http_device_id' is set
-        if self.api_client.client_side_validation and ('http_device_id' not in params or
-                                                       params['http_device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `http_device_id` when calling `custom_values_set_http_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "http_device_id" not in params or params["http_device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `http_device_id` when calling `custom_values_set_http_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_http_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_http_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_http_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_http_field_0`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'http_device_id' in params:
-            path_params['httpDeviceId'] = params['http_device_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
-        if 'value' in params:
-            path_params['value'] = params['value']  # noqa: E501
+        if "http_device_id" in params:
+            path_params["httpDeviceId"] = params["http_device_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
+        if "value" in params:
+            path_params["value"] = params["value"]  # noqa: E501
 
         query_params = []
 
@@ -2553,27 +2811,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/httpfield/{httpDeviceId}/{fieldName}/{value}', 'PUT',
+            "/api/v3/customvalues/httpfield/{httpDeviceId}/{fieldName}/{value}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_sla_field(self, sla_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified SLA  # noqa: E501
@@ -2591,8 +2852,8 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.custom_values_set_sla_field_with_http_info(sla_id, field_name, value, **kwargs)  # noqa: E501
         else:
             (data) = self.custom_values_set_sla_field_with_http_info(sla_id, field_name, value, **kwargs)  # noqa: E501
@@ -2615,41 +2876,47 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['sla_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["sla_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_sla_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_sla_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'sla_id' is set
-        if self.api_client.client_side_validation and ('sla_id' not in params or
-                                                       params['sla_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `sla_id` when calling `custom_values_set_sla_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "sla_id" not in params or params["sla_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `sla_id` when calling `custom_values_set_sla_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_sla_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_sla_field`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_sla_field`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_sla_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'sla_id' in params:
-            path_params['slaId'] = params['sla_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "sla_id" in params:
+            path_params["slaId"] = params["sla_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -2659,34 +2926,38 @@ class CustomValuesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'value' in params:
-            body_params = params['value']
+        if "value" in params:
+            body_params = params["value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/slafield/{slaId}/{fieldName}', 'PUT',
+            "/api/v3/customvalues/slafield/{slaId}/{fieldName}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_sla_field_0(self, sla_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified SLA  # noqa: E501
@@ -2704,11 +2975,13 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.custom_values_set_sla_field_0_with_http_info(sla_id, field_name, value, **kwargs)  # noqa: E501
         else:
-            (data) = self.custom_values_set_sla_field_0_with_http_info(sla_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_sla_field_0_with_http_info(
+                sla_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_sla_field_0_with_http_info(self, sla_id, field_name, value, **kwargs):  # noqa: E501
@@ -2728,43 +3001,49 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['sla_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["sla_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_sla_field_0" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_sla_field_0" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'sla_id' is set
-        if self.api_client.client_side_validation and ('sla_id' not in params or
-                                                       params['sla_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `sla_id` when calling `custom_values_set_sla_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "sla_id" not in params or params["sla_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `sla_id` when calling `custom_values_set_sla_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_sla_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_sla_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_sla_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_sla_field_0`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'sla_id' in params:
-            path_params['slaId'] = params['sla_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
-        if 'value' in params:
-            path_params['value'] = params['value']  # noqa: E501
+        if "sla_id" in params:
+            path_params["slaId"] = params["sla_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
+        if "value" in params:
+            path_params["value"] = params["value"]  # noqa: E501
 
         query_params = []
 
@@ -2775,27 +3054,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/slafield/{slaId}/{fieldName}/{value}', 'PUT',
+            "/api/v3/customvalues/slafield/{slaId}/{fieldName}/{value}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_snmp_field(self, snmp_device_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified SNMP  # noqa: E501
@@ -2813,11 +3095,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_snmp_field_with_http_info(snmp_device_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_snmp_field_with_http_info(
+                snmp_device_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_snmp_field_with_http_info(snmp_device_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_snmp_field_with_http_info(
+                snmp_device_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_snmp_field_with_http_info(self, snmp_device_id, field_name, value, **kwargs):  # noqa: E501
@@ -2837,41 +3123,47 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['snmp_device_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["snmp_device_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_snmp_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_snmp_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'snmp_device_id' is set
-        if self.api_client.client_side_validation and ('snmp_device_id' not in params or
-                                                       params['snmp_device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `snmp_device_id` when calling `custom_values_set_snmp_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "snmp_device_id" not in params or params["snmp_device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `snmp_device_id` when calling `custom_values_set_snmp_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_snmp_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_snmp_field`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_snmp_field`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_snmp_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'snmp_device_id' in params:
-            path_params['snmpDeviceId'] = params['snmp_device_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "snmp_device_id" in params:
+            path_params["snmpDeviceId"] = params["snmp_device_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -2881,34 +3173,38 @@ class CustomValuesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'value' in params:
-            body_params = params['value']
+        if "value" in params:
+            body_params = params["value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/snmpfield/{snmpDeviceId}/{fieldName}', 'PUT',
+            "/api/v3/customvalues/snmpfield/{snmpDeviceId}/{fieldName}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_snmp_field_0(self, snmp_device_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified SNMP  # noqa: E501
@@ -2926,11 +3222,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_snmp_field_0_with_http_info(snmp_device_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_snmp_field_0_with_http_info(
+                snmp_device_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_snmp_field_0_with_http_info(snmp_device_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_snmp_field_0_with_http_info(
+                snmp_device_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_snmp_field_0_with_http_info(self, snmp_device_id, field_name, value, **kwargs):  # noqa: E501
@@ -2950,43 +3250,49 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['snmp_device_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["snmp_device_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_snmp_field_0" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_snmp_field_0" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'snmp_device_id' is set
-        if self.api_client.client_side_validation and ('snmp_device_id' not in params or
-                                                       params['snmp_device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `snmp_device_id` when calling `custom_values_set_snmp_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "snmp_device_id" not in params or params["snmp_device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `snmp_device_id` when calling `custom_values_set_snmp_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_snmp_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_snmp_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_snmp_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_snmp_field_0`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'snmp_device_id' in params:
-            path_params['snmpDeviceId'] = params['snmp_device_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
-        if 'value' in params:
-            path_params['value'] = params['value']  # noqa: E501
+        if "snmp_device_id" in params:
+            path_params["snmpDeviceId"] = params["snmp_device_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
+        if "value" in params:
+            path_params["value"] = params["value"]  # noqa: E501
 
         query_params = []
 
@@ -2997,27 +3303,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/snmpfield/{snmpDeviceId}/{fieldName}/{value}', 'PUT',
+            "/api/v3/customvalues/snmpfield/{snmpDeviceId}/{fieldName}/{value}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_tcp_field(self, tcp_device_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified TCP  # noqa: E501
@@ -3035,11 +3344,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_tcp_field_with_http_info(tcp_device_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_tcp_field_with_http_info(
+                tcp_device_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_tcp_field_with_http_info(tcp_device_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_tcp_field_with_http_info(
+                tcp_device_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_tcp_field_with_http_info(self, tcp_device_id, field_name, value, **kwargs):  # noqa: E501
@@ -3059,41 +3372,47 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['tcp_device_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["tcp_device_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_tcp_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_tcp_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'tcp_device_id' is set
-        if self.api_client.client_side_validation and ('tcp_device_id' not in params or
-                                                       params['tcp_device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `tcp_device_id` when calling `custom_values_set_tcp_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "tcp_device_id" not in params or params["tcp_device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `tcp_device_id` when calling `custom_values_set_tcp_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_tcp_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_tcp_field`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_tcp_field`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_tcp_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'tcp_device_id' in params:
-            path_params['tcpDeviceId'] = params['tcp_device_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "tcp_device_id" in params:
+            path_params["tcpDeviceId"] = params["tcp_device_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -3103,34 +3422,38 @@ class CustomValuesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'value' in params:
-            body_params = params['value']
+        if "value" in params:
+            body_params = params["value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/tcpfield/{tcpDeviceId}/{fieldName}', 'PUT',
+            "/api/v3/customvalues/tcpfield/{tcpDeviceId}/{fieldName}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_tcp_field_0(self, tcp_device_id, field_name, value, **kwargs):  # noqa: E501
         """Set value of custom field for specified TCP  # noqa: E501
@@ -3148,11 +3471,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_tcp_field_0_with_http_info(tcp_device_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_tcp_field_0_with_http_info(
+                tcp_device_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_tcp_field_0_with_http_info(tcp_device_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_tcp_field_0_with_http_info(
+                tcp_device_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_tcp_field_0_with_http_info(self, tcp_device_id, field_name, value, **kwargs):  # noqa: E501
@@ -3172,43 +3499,49 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['tcp_device_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["tcp_device_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_tcp_field_0" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_tcp_field_0" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'tcp_device_id' is set
-        if self.api_client.client_side_validation and ('tcp_device_id' not in params or
-                                                       params['tcp_device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `tcp_device_id` when calling `custom_values_set_tcp_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "tcp_device_id" not in params or params["tcp_device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `tcp_device_id` when calling `custom_values_set_tcp_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_tcp_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_tcp_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_tcp_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_tcp_field_0`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'tcp_device_id' in params:
-            path_params['tcpDeviceId'] = params['tcp_device_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
-        if 'value' in params:
-            path_params['value'] = params['value']  # noqa: E501
+        if "tcp_device_id" in params:
+            path_params["tcpDeviceId"] = params["tcp_device_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
+        if "value" in params:
+            path_params["value"] = params["value"]  # noqa: E501
 
         query_params = []
 
@@ -3219,27 +3552,30 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/tcpfield/{tcpDeviceId}/{fieldName}/{value}', 'PUT',
+            "/api/v3/customvalues/tcpfield/{tcpDeviceId}/{fieldName}/{value}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_ticket_field(self, ticket_id, field_name, value, **kwargs):  # noqa: E501
         """Set custom field value for specified Ticket  # noqa: E501
@@ -3257,11 +3593,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_ticket_field_with_http_info(ticket_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_ticket_field_with_http_info(
+                ticket_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_ticket_field_with_http_info(ticket_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_ticket_field_with_http_info(
+                ticket_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_ticket_field_with_http_info(self, ticket_id, field_name, value, **kwargs):  # noqa: E501
@@ -3281,41 +3621,47 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['ticket_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["ticket_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_ticket_field" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_ticket_field" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'ticket_id' is set
-        if self.api_client.client_side_validation and ('ticket_id' not in params or
-                                                       params['ticket_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `ticket_id` when calling `custom_values_set_ticket_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "ticket_id" not in params or params["ticket_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `ticket_id` when calling `custom_values_set_ticket_field`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_ticket_field`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_ticket_field`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_ticket_field`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_ticket_field`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'ticket_id' in params:
-            path_params['ticketId'] = params['ticket_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
+        if "ticket_id" in params:
+            path_params["ticketId"] = params["ticket_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
 
         query_params = []
 
@@ -3325,34 +3671,38 @@ class CustomValuesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'value' in params:
-            body_params = params['value']
+        if "value" in params:
+            body_params = params["value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/ticketfield/{ticketId}/{fieldName}', 'PUT',
+            "/api/v3/customvalues/ticketfield/{ticketId}/{fieldName}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def custom_values_set_ticket_field_0(self, ticket_id, field_name, value, **kwargs):  # noqa: E501
         """Set custom field value for specified Ticket  # noqa: E501
@@ -3370,11 +3720,15 @@ class CustomValuesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.custom_values_set_ticket_field_0_with_http_info(ticket_id, field_name, value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.custom_values_set_ticket_field_0_with_http_info(
+                ticket_id, field_name, value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.custom_values_set_ticket_field_0_with_http_info(ticket_id, field_name, value, **kwargs)  # noqa: E501
+            (data) = self.custom_values_set_ticket_field_0_with_http_info(
+                ticket_id, field_name, value, **kwargs
+            )  # noqa: E501
             return data
 
     def custom_values_set_ticket_field_0_with_http_info(self, ticket_id, field_name, value, **kwargs):  # noqa: E501
@@ -3394,43 +3748,49 @@ class CustomValuesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['ticket_id', 'field_name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["ticket_id", "field_name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method custom_values_set_ticket_field_0" % key
+                    "Got an unexpected keyword argument '%s'" " to method custom_values_set_ticket_field_0" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'ticket_id' is set
-        if self.api_client.client_side_validation and ('ticket_id' not in params or
-                                                       params['ticket_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `ticket_id` when calling `custom_values_set_ticket_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "ticket_id" not in params or params["ticket_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `ticket_id` when calling `custom_values_set_ticket_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'field_name' is set
-        if self.api_client.client_side_validation and ('field_name' not in params or
-                                                       params['field_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `field_name` when calling `custom_values_set_ticket_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "field_name" not in params or params["field_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `field_name` when calling `custom_values_set_ticket_field_0`"
+            )  # noqa: E501
         # verify the required parameter 'value' is set
-        if self.api_client.client_side_validation and ('value' not in params or
-                                                       params['value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `value` when calling `custom_values_set_ticket_field_0`")  # noqa: E501
+        if self.api_client.client_side_validation and ("value" not in params or params["value"] is None):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `value` when calling `custom_values_set_ticket_field_0`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'ticket_id' in params:
-            path_params['ticketId'] = params['ticket_id']  # noqa: E501
-        if 'field_name' in params:
-            path_params['fieldName'] = params['field_name']  # noqa: E501
-        if 'value' in params:
-            path_params['value'] = params['value']  # noqa: E501
+        if "ticket_id" in params:
+            path_params["ticketId"] = params["ticket_id"]  # noqa: E501
+        if "field_name" in params:
+            path_params["fieldName"] = params["field_name"]  # noqa: E501
+        if "value" in params:
+            path_params["value"] = params["value"]  # noqa: E501
 
         query_params = []
 
@@ -3441,24 +3801,27 @@ class CustomValuesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customvalues/ticketfield/{ticketId}/{fieldName}/{value}', 'PUT',
+            "/api/v3/customvalues/ticketfield/{ticketId}/{fieldName}/{value}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

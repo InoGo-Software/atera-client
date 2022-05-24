@@ -32,19 +32,9 @@ class CustomFieldQueryDTO(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {
-        'name': 'str',
-        'data_type': 'str',
-        'target': 'str',
-        'possible_values': 'list[OptionFieldValues]'
-    }
+    swagger_types = {"name": "str", "data_type": "str", "target": "str", "possible_values": "list[OptionFieldValues]"}
 
-    attribute_map = {
-        'name': 'Name',
-        'data_type': 'DataType',
-        'target': 'Target',
-        'possible_values': 'PossibleValues'
-    }
+    attribute_map = {"name": "Name", "data_type": "DataType", "target": "Target", "possible_values": "PossibleValues"}
 
     def __init__(self, name=None, data_type=None, target=None, possible_values=None, _configuration=None):  # noqa: E501
         """CustomFieldQueryDTO - a model defined in Swagger"""  # noqa: E501
@@ -107,11 +97,11 @@ class CustomFieldQueryDTO(object):
         :type: str
         """
         allowed_values = ["Text", "Boolean", "Numeric", "Date", "Options", "OptionsWithDependencies"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                data_type not in allowed_values):
+        if self._configuration.client_side_validation and data_type not in allowed_values:
             raise ValueError(
-                "Invalid value for `data_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(data_type, allowed_values)
+                "Invalid value for `data_type` ({0}), must be one of {1}".format(  # noqa: E501
+                    data_type, allowed_values
+                )
             )
 
         self._data_type = data_type
@@ -134,12 +124,21 @@ class CustomFieldQueryDTO(object):
         :param target: The target of this CustomFieldQueryDTO.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Customer", "Ticket", "Contact", "Contract", "SLA", "Agent", "SNMPDevice", "TCPDevice", "HTTPDevice", "GenericDevice"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                target not in allowed_values):
+        allowed_values = [
+            "Customer",
+            "Ticket",
+            "Contact",
+            "Contract",
+            "SLA",
+            "Agent",
+            "SNMPDevice",
+            "TCPDevice",
+            "HTTPDevice",
+            "GenericDevice",
+        ]  # noqa: E501
+        if self._configuration.client_side_validation and target not in allowed_values:
             raise ValueError(
-                "Invalid value for `target` ({0}), must be one of {1}"  # noqa: E501
-                .format(target, allowed_values)
+                "Invalid value for `target` ({0}), must be one of {1}".format(target, allowed_values)  # noqa: E501
             )
 
         self._target = target
@@ -172,18 +171,16 @@ class CustomFieldQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(CustomFieldQueryDTO, dict):

@@ -32,17 +32,9 @@ class RetainerFlatFeeContractQueryDTO(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {
-        'quantity': 'float',
-        'rate': 'RateQueryDTO',
-        'billing_period': 'str'
-    }
+    swagger_types = {"quantity": "float", "rate": "RateQueryDTO", "billing_period": "str"}
 
-    attribute_map = {
-        'quantity': 'Quantity',
-        'rate': 'Rate',
-        'billing_period': 'BillingPeriod'
-    }
+    attribute_map = {"quantity": "Quantity", "rate": "Rate", "billing_period": "BillingPeriod"}
 
     def __init__(self, quantity=None, rate=None, billing_period=None, _configuration=None):  # noqa: E501
         """RetainerFlatFeeContractQueryDTO - a model defined in Swagger"""  # noqa: E501
@@ -122,12 +114,21 @@ class RetainerFlatFeeContractQueryDTO(object):
         :param billing_period: The billing_period of this RetainerFlatFeeContractQueryDTO.  # noqa: E501
         :type: str
         """
-        allowed_values = ["EndOfContractDuration", "Weekly", "BiWeekly", "Monthly", "Quarterly", "TwiceAYear", "Yearly", "OnDemand"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                billing_period not in allowed_values):
+        allowed_values = [
+            "EndOfContractDuration",
+            "Weekly",
+            "BiWeekly",
+            "Monthly",
+            "Quarterly",
+            "TwiceAYear",
+            "Yearly",
+            "OnDemand",
+        ]  # noqa: E501
+        if self._configuration.client_side_validation and billing_period not in allowed_values:
             raise ValueError(
-                "Invalid value for `billing_period` ({0}), must be one of {1}"  # noqa: E501
-                .format(billing_period, allowed_values)
+                "Invalid value for `billing_period` ({0}), must be one of {1}".format(  # noqa: E501
+                    billing_period, allowed_values
+                )
             )
 
         self._billing_period = billing_period
@@ -139,18 +140,16 @@ class RetainerFlatFeeContractQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(RetainerFlatFeeContractQueryDTO, dict):

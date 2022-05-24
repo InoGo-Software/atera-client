@@ -48,8 +48,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_create_generic_device_with_http_info(request, **kwargs)  # noqa: E501
         else:
             (data) = self.device_create_generic_device_with_http_info(request, **kwargs)  # noqa: E501
@@ -71,25 +71,27 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['request']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["request"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_create_generic_device" % key
+                    "Got an unexpected keyword argument '%s'" " to method device_create_generic_device" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'request' is set
-        if self.api_client.client_side_validation and ('request' not in params or
-                                                       params['request'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `request` when calling `device_create_generic_device`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "request" not in params or params["request"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `request` when calling `device_create_generic_device`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -103,34 +105,38 @@ class DeviceApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'request' in params:
-            body_params = params['request']
+        if "request" in params:
+            body_params = params["request"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/genericdevice', 'POST',
+            "/api/v3/devices/genericdevice",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CreatedDeviceRes',  # noqa: E501
+            response_type="CreatedDeviceRes",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_create_http_device(self, request, **kwargs):  # noqa: E501
         """Create HTTP device  # noqa: E501
@@ -147,8 +153,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_create_http_device_with_http_info(request, **kwargs)  # noqa: E501
         else:
             (data) = self.device_create_http_device_with_http_info(request, **kwargs)  # noqa: E501
@@ -170,25 +176,25 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['request']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["request"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_create_http_device" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method device_create_http_device" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'request' is set
-        if self.api_client.client_side_validation and ('request' not in params or
-                                                       params['request'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `request` when calling `device_create_http_device`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "request" not in params or params["request"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `request` when calling `device_create_http_device`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -202,34 +208,38 @@ class DeviceApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'request' in params:
-            body_params = params['request']
+        if "request" in params:
+            body_params = params["request"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/httpdevice', 'POST',
+            "/api/v3/devices/httpdevice",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CreatedDeviceRes',  # noqa: E501
+            response_type="CreatedDeviceRes",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_create_snmp_device_v1_v2(self, request, **kwargs):  # noqa: E501
         """Create SNMP device V1/V2  # noqa: E501
@@ -246,8 +256,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_create_snmp_device_v1_v2_with_http_info(request, **kwargs)  # noqa: E501
         else:
             (data) = self.device_create_snmp_device_v1_v2_with_http_info(request, **kwargs)  # noqa: E501
@@ -269,25 +279,27 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['request']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["request"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_create_snmp_device_v1_v2" % key
+                    "Got an unexpected keyword argument '%s'" " to method device_create_snmp_device_v1_v2" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'request' is set
-        if self.api_client.client_side_validation and ('request' not in params or
-                                                       params['request'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `request` when calling `device_create_snmp_device_v1_v2`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "request" not in params or params["request"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `request` when calling `device_create_snmp_device_v1_v2`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -301,34 +313,38 @@ class DeviceApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'request' in params:
-            body_params = params['request']
+        if "request" in params:
+            body_params = params["request"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/snmpdevice/v1v2', 'POST',
+            "/api/v3/devices/snmpdevice/v1v2",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CreatedDeviceRes',  # noqa: E501
+            response_type="CreatedDeviceRes",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_create_snmp_device_v3(self, request, **kwargs):  # noqa: E501
         """Create SNMP device V3  # noqa: E501
@@ -345,8 +361,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_create_snmp_device_v3_with_http_info(request, **kwargs)  # noqa: E501
         else:
             (data) = self.device_create_snmp_device_v3_with_http_info(request, **kwargs)  # noqa: E501
@@ -368,25 +384,27 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['request']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["request"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_create_snmp_device_v3" % key
+                    "Got an unexpected keyword argument '%s'" " to method device_create_snmp_device_v3" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'request' is set
-        if self.api_client.client_side_validation and ('request' not in params or
-                                                       params['request'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `request` when calling `device_create_snmp_device_v3`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "request" not in params or params["request"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `request` when calling `device_create_snmp_device_v3`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -400,34 +418,38 @@ class DeviceApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'request' in params:
-            body_params = params['request']
+        if "request" in params:
+            body_params = params["request"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/snmpdevice/v3', 'POST',
+            "/api/v3/devices/snmpdevice/v3",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CreatedDeviceRes',  # noqa: E501
+            response_type="CreatedDeviceRes",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_create_tcp_device(self, request, **kwargs):  # noqa: E501
         """Create TCP device  # noqa: E501
@@ -444,8 +466,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_create_tcp_device_with_http_info(request, **kwargs)  # noqa: E501
         else:
             (data) = self.device_create_tcp_device_with_http_info(request, **kwargs)  # noqa: E501
@@ -467,25 +489,25 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['request']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["request"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_create_tcp_device" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method device_create_tcp_device" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'request' is set
-        if self.api_client.client_side_validation and ('request' not in params or
-                                                       params['request'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `request` when calling `device_create_tcp_device`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "request" not in params or params["request"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `request` when calling `device_create_tcp_device`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -499,34 +521,38 @@ class DeviceApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'request' in params:
-            body_params = params['request']
+        if "request" in params:
+            body_params = params["request"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/tcpdevice', 'POST',
+            "/api/v3/devices/tcpdevice",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CreatedDeviceRes',  # noqa: E501
+            response_type="CreatedDeviceRes",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_delete(self, device_id, **kwargs):  # noqa: E501
         """Delete specified Generic device  # noqa: E501
@@ -543,8 +569,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_delete_with_http_info(device_id, **kwargs)  # noqa: E501
         else:
             (data) = self.device_delete_with_http_info(device_id, **kwargs)  # noqa: E501
@@ -566,31 +592,29 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['device_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["device_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_delete" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method device_delete" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'device_id' is set
-        if self.api_client.client_side_validation and ('device_id' not in params or
-                                                       params['device_id'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "device_id" not in params or params["device_id"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `device_id` when calling `device_delete`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'device_id' in params:
-            path_params['deviceId'] = params['device_id']  # noqa: E501
+        if "device_id" in params:
+            path_params["deviceId"] = params["device_id"]  # noqa: E501
 
         query_params = []
 
@@ -601,27 +625,30 @@ class DeviceApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/genericdevice/{deviceId}', 'DELETE',
+            "/api/v3/devices/genericdevice/{deviceId}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_delete_http(self, device_id, **kwargs):  # noqa: E501
         """Delete specified HTTP device  # noqa: E501
@@ -638,8 +665,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_delete_http_with_http_info(device_id, **kwargs)  # noqa: E501
         else:
             (data) = self.device_delete_http_with_http_info(device_id, **kwargs)  # noqa: E501
@@ -661,31 +688,31 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['device_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["device_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_delete_http" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method device_delete_http" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'device_id' is set
-        if self.api_client.client_side_validation and ('device_id' not in params or
-                                                       params['device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `device_id` when calling `device_delete_http`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "device_id" not in params or params["device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `device_id` when calling `device_delete_http`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'device_id' in params:
-            path_params['deviceId'] = params['device_id']  # noqa: E501
+        if "device_id" in params:
+            path_params["deviceId"] = params["device_id"]  # noqa: E501
 
         query_params = []
 
@@ -696,27 +723,30 @@ class DeviceApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/httpdevice/{deviceId}', 'DELETE',
+            "/api/v3/devices/httpdevice/{deviceId}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_delete_snmp(self, device_id, **kwargs):  # noqa: E501
         """Delete specified SNMP device  # noqa: E501
@@ -733,8 +763,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_delete_snmp_with_http_info(device_id, **kwargs)  # noqa: E501
         else:
             (data) = self.device_delete_snmp_with_http_info(device_id, **kwargs)  # noqa: E501
@@ -756,31 +786,31 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['device_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["device_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_delete_snmp" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method device_delete_snmp" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'device_id' is set
-        if self.api_client.client_side_validation and ('device_id' not in params or
-                                                       params['device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `device_id` when calling `device_delete_snmp`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "device_id" not in params or params["device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `device_id` when calling `device_delete_snmp`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'device_id' in params:
-            path_params['deviceId'] = params['device_id']  # noqa: E501
+        if "device_id" in params:
+            path_params["deviceId"] = params["device_id"]  # noqa: E501
 
         query_params = []
 
@@ -791,27 +821,30 @@ class DeviceApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/snmpdevice/{deviceId}', 'DELETE',
+            "/api/v3/devices/snmpdevice/{deviceId}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_delete_tcp(self, device_id, **kwargs):  # noqa: E501
         """Delete specified TCP device  # noqa: E501
@@ -828,8 +861,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_delete_tcp_with_http_info(device_id, **kwargs)  # noqa: E501
         else:
             (data) = self.device_delete_tcp_with_http_info(device_id, **kwargs)  # noqa: E501
@@ -851,31 +884,31 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['device_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["device_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_delete_tcp" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method device_delete_tcp" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'device_id' is set
-        if self.api_client.client_side_validation and ('device_id' not in params or
-                                                       params['device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `device_id` when calling `device_delete_tcp`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "device_id" not in params or params["device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `device_id` when calling `device_delete_tcp`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'device_id' in params:
-            path_params['deviceId'] = params['device_id']  # noqa: E501
+        if "device_id" in params:
+            path_params["deviceId"] = params["device_id"]  # noqa: E501
 
         query_params = []
 
@@ -886,27 +919,30 @@ class DeviceApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/tcpdevice/{deviceId}', 'DELETE',
+            "/api/v3/devices/tcpdevice/{deviceId}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_get_generic_device(self, device_id, **kwargs):  # noqa: E501
         """Find specified Generic device  # noqa: E501
@@ -923,8 +959,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_get_generic_device_with_http_info(device_id, **kwargs)  # noqa: E501
         else:
             (data) = self.device_get_generic_device_with_http_info(device_id, **kwargs)  # noqa: E501
@@ -946,31 +982,31 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['device_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["device_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_get_generic_device" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method device_get_generic_device" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'device_id' is set
-        if self.api_client.client_side_validation and ('device_id' not in params or
-                                                       params['device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `device_id` when calling `device_get_generic_device`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "device_id" not in params or params["device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `device_id` when calling `device_get_generic_device`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'device_id' in params:
-            path_params['deviceId'] = params['device_id']  # noqa: E501
+        if "device_id" in params:
+            path_params["deviceId"] = params["device_id"]  # noqa: E501
 
         query_params = []
 
@@ -981,27 +1017,30 @@ class DeviceApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/genericdevice/{deviceId}', 'GET',
+            "/api/v3/devices/genericdevice/{deviceId}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GenericDeviceQueryDTO',  # noqa: E501
+            response_type="GenericDeviceQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_get_generic_devices(self, **kwargs):  # noqa: E501
         """Find Generic devices  # noqa: E501
@@ -1021,8 +1060,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_get_generic_devices_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.device_get_generic_devices_with_http_info(**kwargs)  # noqa: E501
@@ -1047,35 +1086,32 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'items_in_page', 'customer_id', 'monitoring_agent_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["page", "items_in_page", "customer_id", "monitoring_agent_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_get_generic_devices" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method device_get_generic_devices" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
-        if 'items_in_page' in params:
-            query_params.append(('itemsInPage', params['items_in_page']))  # noqa: E501
-        if 'customer_id' in params:
-            query_params.append(('customerId', params['customer_id']))  # noqa: E501
-        if 'monitoring_agent_id' in params:
-            query_params.append(('monitoringAgentId', params['monitoring_agent_id']))  # noqa: E501
+        if "page" in params:
+            query_params.append(("page", params["page"]))  # noqa: E501
+        if "items_in_page" in params:
+            query_params.append(("itemsInPage", params["items_in_page"]))  # noqa: E501
+        if "customer_id" in params:
+            query_params.append(("customerId", params["customer_id"]))  # noqa: E501
+        if "monitoring_agent_id" in params:
+            query_params.append(("monitoringAgentId", params["monitoring_agent_id"]))  # noqa: E501
 
         header_params = {}
 
@@ -1084,27 +1120,28 @@ class DeviceApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/genericdevices', 'GET',
+            "/api/v3/devices/genericdevices",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='APIResultWrapperGenericDeviceQueryDTO',  # noqa: E501
+            response_type="APIResultWrapperGenericDeviceQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_get_http_device(self, device_id, **kwargs):  # noqa: E501
         """Find specified HTTP device  # noqa: E501
@@ -1121,8 +1158,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_get_http_device_with_http_info(device_id, **kwargs)  # noqa: E501
         else:
             (data) = self.device_get_http_device_with_http_info(device_id, **kwargs)  # noqa: E501
@@ -1144,31 +1181,31 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['device_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["device_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_get_http_device" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method device_get_http_device" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'device_id' is set
-        if self.api_client.client_side_validation and ('device_id' not in params or
-                                                       params['device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `device_id` when calling `device_get_http_device`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "device_id" not in params or params["device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `device_id` when calling `device_get_http_device`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'device_id' in params:
-            path_params['deviceId'] = params['device_id']  # noqa: E501
+        if "device_id" in params:
+            path_params["deviceId"] = params["device_id"]  # noqa: E501
 
         query_params = []
 
@@ -1179,27 +1216,30 @@ class DeviceApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/httpdevice/{deviceId}', 'GET',
+            "/api/v3/devices/httpdevice/{deviceId}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='HttpDeviceQueryDTO',  # noqa: E501
+            response_type="HttpDeviceQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_get_http_devices(self, **kwargs):  # noqa: E501
         """Find HTTP devices  # noqa: E501
@@ -1219,8 +1259,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_get_http_devices_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.device_get_http_devices_with_http_info(**kwargs)  # noqa: E501
@@ -1245,35 +1285,32 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'items_in_page', 'customer_id', 'monitoring_agent_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["page", "items_in_page", "customer_id", "monitoring_agent_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_get_http_devices" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method device_get_http_devices" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
-        if 'items_in_page' in params:
-            query_params.append(('itemsInPage', params['items_in_page']))  # noqa: E501
-        if 'customer_id' in params:
-            query_params.append(('customerId', params['customer_id']))  # noqa: E501
-        if 'monitoring_agent_id' in params:
-            query_params.append(('monitoringAgentId', params['monitoring_agent_id']))  # noqa: E501
+        if "page" in params:
+            query_params.append(("page", params["page"]))  # noqa: E501
+        if "items_in_page" in params:
+            query_params.append(("itemsInPage", params["items_in_page"]))  # noqa: E501
+        if "customer_id" in params:
+            query_params.append(("customerId", params["customer_id"]))  # noqa: E501
+        if "monitoring_agent_id" in params:
+            query_params.append(("monitoringAgentId", params["monitoring_agent_id"]))  # noqa: E501
 
         header_params = {}
 
@@ -1282,27 +1319,28 @@ class DeviceApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/httpdevices', 'GET',
+            "/api/v3/devices/httpdevices",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='APIResultWrapperHttpDeviceQueryDTO',  # noqa: E501
+            response_type="APIResultWrapperHttpDeviceQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_get_snmp_device(self, device_id, **kwargs):  # noqa: E501
         """Find specified SNMP device  # noqa: E501
@@ -1319,8 +1357,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_get_snmp_device_with_http_info(device_id, **kwargs)  # noqa: E501
         else:
             (data) = self.device_get_snmp_device_with_http_info(device_id, **kwargs)  # noqa: E501
@@ -1342,31 +1380,31 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['device_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["device_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_get_snmp_device" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method device_get_snmp_device" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'device_id' is set
-        if self.api_client.client_side_validation and ('device_id' not in params or
-                                                       params['device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `device_id` when calling `device_get_snmp_device`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "device_id" not in params or params["device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `device_id` when calling `device_get_snmp_device`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'device_id' in params:
-            path_params['deviceId'] = params['device_id']  # noqa: E501
+        if "device_id" in params:
+            path_params["deviceId"] = params["device_id"]  # noqa: E501
 
         query_params = []
 
@@ -1377,27 +1415,30 @@ class DeviceApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/snmpdevice/{deviceId}', 'GET',
+            "/api/v3/devices/snmpdevice/{deviceId}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SNMPDeviceQueryDTO',  # noqa: E501
+            response_type="SNMPDeviceQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_get_snmp_devices(self, **kwargs):  # noqa: E501
         """Find SNMP devices  # noqa: E501
@@ -1417,8 +1458,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_get_snmp_devices_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.device_get_snmp_devices_with_http_info(**kwargs)  # noqa: E501
@@ -1443,35 +1484,32 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'items_in_page', 'customer_id', 'monitoring_agent_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["page", "items_in_page", "customer_id", "monitoring_agent_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_get_snmp_devices" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method device_get_snmp_devices" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
-        if 'items_in_page' in params:
-            query_params.append(('itemsInPage', params['items_in_page']))  # noqa: E501
-        if 'customer_id' in params:
-            query_params.append(('customerId', params['customer_id']))  # noqa: E501
-        if 'monitoring_agent_id' in params:
-            query_params.append(('monitoringAgentId', params['monitoring_agent_id']))  # noqa: E501
+        if "page" in params:
+            query_params.append(("page", params["page"]))  # noqa: E501
+        if "items_in_page" in params:
+            query_params.append(("itemsInPage", params["items_in_page"]))  # noqa: E501
+        if "customer_id" in params:
+            query_params.append(("customerId", params["customer_id"]))  # noqa: E501
+        if "monitoring_agent_id" in params:
+            query_params.append(("monitoringAgentId", params["monitoring_agent_id"]))  # noqa: E501
 
         header_params = {}
 
@@ -1480,27 +1518,28 @@ class DeviceApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/snmpdevices', 'GET',
+            "/api/v3/devices/snmpdevices",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='APIResultWrapperSNMPDeviceQueryDTO',  # noqa: E501
+            response_type="APIResultWrapperSNMPDeviceQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_get_tcp_device(self, device_id, **kwargs):  # noqa: E501
         """Find specified TCP device  # noqa: E501
@@ -1517,8 +1556,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_get_tcp_device_with_http_info(device_id, **kwargs)  # noqa: E501
         else:
             (data) = self.device_get_tcp_device_with_http_info(device_id, **kwargs)  # noqa: E501
@@ -1540,31 +1579,31 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['device_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["device_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_get_tcp_device" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method device_get_tcp_device" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'device_id' is set
-        if self.api_client.client_side_validation and ('device_id' not in params or
-                                                       params['device_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `device_id` when calling `device_get_tcp_device`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "device_id" not in params or params["device_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `device_id` when calling `device_get_tcp_device`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'device_id' in params:
-            path_params['deviceId'] = params['device_id']  # noqa: E501
+        if "device_id" in params:
+            path_params["deviceId"] = params["device_id"]  # noqa: E501
 
         query_params = []
 
@@ -1575,27 +1614,30 @@ class DeviceApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/tcpdevice/{deviceId}', 'GET',
+            "/api/v3/devices/tcpdevice/{deviceId}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='TcpDeviceQueryDTO',  # noqa: E501
+            response_type="TcpDeviceQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def device_get_tcp_devices(self, **kwargs):  # noqa: E501
         """Find TCP devices  # noqa: E501
@@ -1615,8 +1657,8 @@ class DeviceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.device_get_tcp_devices_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.device_get_tcp_devices_with_http_info(**kwargs)  # noqa: E501
@@ -1641,35 +1683,32 @@ class DeviceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'items_in_page', 'customer_id', 'monitoring_agent_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["page", "items_in_page", "customer_id", "monitoring_agent_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method device_get_tcp_devices" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method device_get_tcp_devices" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
-        if 'items_in_page' in params:
-            query_params.append(('itemsInPage', params['items_in_page']))  # noqa: E501
-        if 'customer_id' in params:
-            query_params.append(('customerId', params['customer_id']))  # noqa: E501
-        if 'monitoring_agent_id' in params:
-            query_params.append(('monitoringAgentId', params['monitoring_agent_id']))  # noqa: E501
+        if "page" in params:
+            query_params.append(("page", params["page"]))  # noqa: E501
+        if "items_in_page" in params:
+            query_params.append(("itemsInPage", params["items_in_page"]))  # noqa: E501
+        if "customer_id" in params:
+            query_params.append(("customerId", params["customer_id"]))  # noqa: E501
+        if "monitoring_agent_id" in params:
+            query_params.append(("monitoringAgentId", params["monitoring_agent_id"]))  # noqa: E501
 
         header_params = {}
 
@@ -1678,24 +1717,25 @@ class DeviceApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/devices/tcpdevices', 'GET',
+            "/api/v3/devices/tcpdevices",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='APIResultWrapperTcpDeviceQueryDTO',  # noqa: E501
+            response_type="APIResultWrapperTcpDeviceQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

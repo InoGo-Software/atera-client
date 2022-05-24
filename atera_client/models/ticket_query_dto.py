@@ -33,92 +33,135 @@ class TicketQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ticket_id': 'int',
-        'ticket_title': 'str',
-        'ticket_number': 'str',
-        'ticket_priority': 'str',
-        'ticket_impact': 'str',
-        'ticket_status': 'str',
-        'ticket_source': 'str',
-        'ticket_type': 'str',
-        'end_user_id': 'int',
-        'end_user_email': 'str',
-        'end_user_first_name': 'str',
-        'end_user_last_name': 'str',
-        'end_user_phone': 'str',
-        'ticket_resolved_date': 'datetime',
-        'ticket_created_date': 'datetime',
-        'technician_first_comment_date': 'datetime',
-        'first_response_due_date': 'datetime',
-        'closed_ticket_due_date': 'datetime',
-        'first_comment': 'str',
-        'last_end_user_comment': 'str',
-        'last_end_user_comment_timestamp': 'datetime',
-        'last_technician_comment': 'str',
-        'last_technician_comment_timestamp': 'datetime',
-        'on_site_duration_seconds': 'int',
-        'on_site_duration_minutes': 'int',
-        'off_site_duration_seconds': 'int',
-        'off_site_duration_minutes': 'int',
-        'on_sla_duration_seconds': 'int',
-        'on_sla_duration_minutes': 'int',
-        'off_sla_duration_seconds': 'int',
-        'off_sla_duration_minutes': 'int',
-        'total_duration_seconds': 'int',
-        'total_duration_minutes': 'int',
-        'customer_id': 'int',
-        'customer_name': 'str',
-        'customer_business_number': 'str',
-        'technician_contact_id': 'int',
-        'technician_full_name': 'str',
-        'technician_email': 'str',
-        'contract_id': 'int'
+        "ticket_id": "int",
+        "ticket_title": "str",
+        "ticket_number": "str",
+        "ticket_priority": "str",
+        "ticket_impact": "str",
+        "ticket_status": "str",
+        "ticket_source": "str",
+        "ticket_type": "str",
+        "end_user_id": "int",
+        "end_user_email": "str",
+        "end_user_first_name": "str",
+        "end_user_last_name": "str",
+        "end_user_phone": "str",
+        "ticket_resolved_date": "datetime",
+        "ticket_created_date": "datetime",
+        "technician_first_comment_date": "datetime",
+        "first_response_due_date": "datetime",
+        "closed_ticket_due_date": "datetime",
+        "first_comment": "str",
+        "last_end_user_comment": "str",
+        "last_end_user_comment_timestamp": "datetime",
+        "last_technician_comment": "str",
+        "last_technician_comment_timestamp": "datetime",
+        "on_site_duration_seconds": "int",
+        "on_site_duration_minutes": "int",
+        "off_site_duration_seconds": "int",
+        "off_site_duration_minutes": "int",
+        "on_sla_duration_seconds": "int",
+        "on_sla_duration_minutes": "int",
+        "off_sla_duration_seconds": "int",
+        "off_sla_duration_minutes": "int",
+        "total_duration_seconds": "int",
+        "total_duration_minutes": "int",
+        "customer_id": "int",
+        "customer_name": "str",
+        "customer_business_number": "str",
+        "technician_contact_id": "int",
+        "technician_full_name": "str",
+        "technician_email": "str",
+        "contract_id": "int",
     }
 
     attribute_map = {
-        'ticket_id': 'TicketID',
-        'ticket_title': 'TicketTitle',
-        'ticket_number': 'TicketNumber',
-        'ticket_priority': 'TicketPriority',
-        'ticket_impact': 'TicketImpact',
-        'ticket_status': 'TicketStatus',
-        'ticket_source': 'TicketSource',
-        'ticket_type': 'TicketType',
-        'end_user_id': 'EndUserID',
-        'end_user_email': 'EndUserEmail',
-        'end_user_first_name': 'EndUserFirstName',
-        'end_user_last_name': 'EndUserLastName',
-        'end_user_phone': 'EndUserPhone',
-        'ticket_resolved_date': 'TicketResolvedDate',
-        'ticket_created_date': 'TicketCreatedDate',
-        'technician_first_comment_date': 'TechnicianFirstCommentDate',
-        'first_response_due_date': 'FirstResponseDueDate',
-        'closed_ticket_due_date': 'ClosedTicketDueDate',
-        'first_comment': 'FirstComment',
-        'last_end_user_comment': 'LastEndUserComment',
-        'last_end_user_comment_timestamp': 'LastEndUserCommentTimestamp',
-        'last_technician_comment': 'LastTechnicianComment',
-        'last_technician_comment_timestamp': 'LastTechnicianCommentTimestamp',
-        'on_site_duration_seconds': 'OnSiteDurationSeconds',
-        'on_site_duration_minutes': 'OnSiteDurationMinutes',
-        'off_site_duration_seconds': 'OffSiteDurationSeconds',
-        'off_site_duration_minutes': 'OffSiteDurationMinutes',
-        'on_sla_duration_seconds': 'OnSLADurationSeconds',
-        'on_sla_duration_minutes': 'OnSLADurationMinutes',
-        'off_sla_duration_seconds': 'OffSLADurationSeconds',
-        'off_sla_duration_minutes': 'OffSLADurationMinutes',
-        'total_duration_seconds': 'TotalDurationSeconds',
-        'total_duration_minutes': 'TotalDurationMinutes',
-        'customer_id': 'CustomerID',
-        'customer_name': 'CustomerName',
-        'customer_business_number': 'CustomerBusinessNumber',
-        'technician_contact_id': 'TechnicianContactID',
-        'technician_full_name': 'TechnicianFullName',
-        'technician_email': 'TechnicianEmail',
-        'contract_id': 'ContractID'
+        "ticket_id": "TicketID",
+        "ticket_title": "TicketTitle",
+        "ticket_number": "TicketNumber",
+        "ticket_priority": "TicketPriority",
+        "ticket_impact": "TicketImpact",
+        "ticket_status": "TicketStatus",
+        "ticket_source": "TicketSource",
+        "ticket_type": "TicketType",
+        "end_user_id": "EndUserID",
+        "end_user_email": "EndUserEmail",
+        "end_user_first_name": "EndUserFirstName",
+        "end_user_last_name": "EndUserLastName",
+        "end_user_phone": "EndUserPhone",
+        "ticket_resolved_date": "TicketResolvedDate",
+        "ticket_created_date": "TicketCreatedDate",
+        "technician_first_comment_date": "TechnicianFirstCommentDate",
+        "first_response_due_date": "FirstResponseDueDate",
+        "closed_ticket_due_date": "ClosedTicketDueDate",
+        "first_comment": "FirstComment",
+        "last_end_user_comment": "LastEndUserComment",
+        "last_end_user_comment_timestamp": "LastEndUserCommentTimestamp",
+        "last_technician_comment": "LastTechnicianComment",
+        "last_technician_comment_timestamp": "LastTechnicianCommentTimestamp",
+        "on_site_duration_seconds": "OnSiteDurationSeconds",
+        "on_site_duration_minutes": "OnSiteDurationMinutes",
+        "off_site_duration_seconds": "OffSiteDurationSeconds",
+        "off_site_duration_minutes": "OffSiteDurationMinutes",
+        "on_sla_duration_seconds": "OnSLADurationSeconds",
+        "on_sla_duration_minutes": "OnSLADurationMinutes",
+        "off_sla_duration_seconds": "OffSLADurationSeconds",
+        "off_sla_duration_minutes": "OffSLADurationMinutes",
+        "total_duration_seconds": "TotalDurationSeconds",
+        "total_duration_minutes": "TotalDurationMinutes",
+        "customer_id": "CustomerID",
+        "customer_name": "CustomerName",
+        "customer_business_number": "CustomerBusinessNumber",
+        "technician_contact_id": "TechnicianContactID",
+        "technician_full_name": "TechnicianFullName",
+        "technician_email": "TechnicianEmail",
+        "contract_id": "ContractID",
     }
 
-    def __init__(self, ticket_id=None, ticket_title=None, ticket_number=None, ticket_priority=None, ticket_impact=None, ticket_status=None, ticket_source=None, ticket_type=None, end_user_id=None, end_user_email=None, end_user_first_name=None, end_user_last_name=None, end_user_phone=None, ticket_resolved_date=None, ticket_created_date=None, technician_first_comment_date=None, first_response_due_date=None, closed_ticket_due_date=None, first_comment=None, last_end_user_comment=None, last_end_user_comment_timestamp=None, last_technician_comment=None, last_technician_comment_timestamp=None, on_site_duration_seconds=None, on_site_duration_minutes=None, off_site_duration_seconds=None, off_site_duration_minutes=None, on_sla_duration_seconds=None, on_sla_duration_minutes=None, off_sla_duration_seconds=None, off_sla_duration_minutes=None, total_duration_seconds=None, total_duration_minutes=None, customer_id=None, customer_name=None, customer_business_number=None, technician_contact_id=None, technician_full_name=None, technician_email=None, contract_id=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        ticket_id=None,
+        ticket_title=None,
+        ticket_number=None,
+        ticket_priority=None,
+        ticket_impact=None,
+        ticket_status=None,
+        ticket_source=None,
+        ticket_type=None,
+        end_user_id=None,
+        end_user_email=None,
+        end_user_first_name=None,
+        end_user_last_name=None,
+        end_user_phone=None,
+        ticket_resolved_date=None,
+        ticket_created_date=None,
+        technician_first_comment_date=None,
+        first_response_due_date=None,
+        closed_ticket_due_date=None,
+        first_comment=None,
+        last_end_user_comment=None,
+        last_end_user_comment_timestamp=None,
+        last_technician_comment=None,
+        last_technician_comment_timestamp=None,
+        on_site_duration_seconds=None,
+        on_site_duration_minutes=None,
+        off_site_duration_seconds=None,
+        off_site_duration_minutes=None,
+        on_sla_duration_seconds=None,
+        on_sla_duration_minutes=None,
+        off_sla_duration_seconds=None,
+        off_sla_duration_minutes=None,
+        total_duration_seconds=None,
+        total_duration_minutes=None,
+        customer_id=None,
+        customer_name=None,
+        customer_business_number=None,
+        technician_contact_id=None,
+        technician_full_name=None,
+        technician_email=None,
+        contract_id=None,
+        _configuration=None,
+    ):  # noqa: E501
         """TicketQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -329,11 +372,11 @@ class TicketQueryDTO(object):
         :type: str
         """
         allowed_values = ["Low", "Medium", "High", "Critical"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                ticket_priority not in allowed_values):
+        if self._configuration.client_side_validation and ticket_priority not in allowed_values:
             raise ValueError(
-                "Invalid value for `ticket_priority` ({0}), must be one of {1}"  # noqa: E501
-                .format(ticket_priority, allowed_values)
+                "Invalid value for `ticket_priority` ({0}), must be one of {1}".format(  # noqa: E501
+                    ticket_priority, allowed_values
+                )
             )
 
         self._ticket_priority = ticket_priority
@@ -357,11 +400,11 @@ class TicketQueryDTO(object):
         :type: str
         """
         allowed_values = ["NoImpact", "SiteDown", "ServerIssue", "Minor", "Major", "Crisis"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                ticket_impact not in allowed_values):
+        if self._configuration.client_side_validation and ticket_impact not in allowed_values:
             raise ValueError(
-                "Invalid value for `ticket_impact` ({0}), must be one of {1}"  # noqa: E501
-                .format(ticket_impact, allowed_values)
+                "Invalid value for `ticket_impact` ({0}), must be one of {1}".format(  # noqa: E501
+                    ticket_impact, allowed_values
+                )
             )
 
         self._ticket_impact = ticket_impact
@@ -427,11 +470,11 @@ class TicketQueryDTO(object):
         :type: str
         """
         allowed_values = ["Incident", "Problem", "Request", "Change"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                ticket_type not in allowed_values):
+        if self._configuration.client_side_validation and ticket_type not in allowed_values:
             raise ValueError(
-                "Invalid value for `ticket_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(ticket_type, allowed_values)
+                "Invalid value for `ticket_type` ({0}), must be one of {1}".format(  # noqa: E501
+                    ticket_type, allowed_values
+                )
             )
 
         self._ticket_type = ticket_type
@@ -1115,18 +1158,16 @@ class TicketQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(TicketQueryDTO, dict):

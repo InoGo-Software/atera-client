@@ -33,38 +33,54 @@ class ContactQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'end_user_id': 'int',
-        'customer_id': 'int',
-        'customer_name': 'str',
-        'firstname': 'str',
-        'lastname': 'str',
-        'job_title': 'str',
-        'email': 'str',
-        'phone': 'str',
-        'mobile_phone': 'str',
-        'is_contact_person': 'bool',
-        'in_ignore_mode': 'bool',
-        'created_on': 'datetime',
-        'last_modified': 'datetime'
+        "end_user_id": "int",
+        "customer_id": "int",
+        "customer_name": "str",
+        "firstname": "str",
+        "lastname": "str",
+        "job_title": "str",
+        "email": "str",
+        "phone": "str",
+        "mobile_phone": "str",
+        "is_contact_person": "bool",
+        "in_ignore_mode": "bool",
+        "created_on": "datetime",
+        "last_modified": "datetime",
     }
 
     attribute_map = {
-        'end_user_id': 'EndUserID',
-        'customer_id': 'CustomerID',
-        'customer_name': 'CustomerName',
-        'firstname': 'Firstname',
-        'lastname': 'Lastname',
-        'job_title': 'JobTitle',
-        'email': 'Email',
-        'phone': 'Phone',
-        'mobile_phone': 'MobilePhone',
-        'is_contact_person': 'IsContactPerson',
-        'in_ignore_mode': 'InIgnoreMode',
-        'created_on': 'CreatedOn',
-        'last_modified': 'LastModified'
+        "end_user_id": "EndUserID",
+        "customer_id": "CustomerID",
+        "customer_name": "CustomerName",
+        "firstname": "Firstname",
+        "lastname": "Lastname",
+        "job_title": "JobTitle",
+        "email": "Email",
+        "phone": "Phone",
+        "mobile_phone": "MobilePhone",
+        "is_contact_person": "IsContactPerson",
+        "in_ignore_mode": "InIgnoreMode",
+        "created_on": "CreatedOn",
+        "last_modified": "LastModified",
     }
 
-    def __init__(self, end_user_id=None, customer_id=None, customer_name=None, firstname=None, lastname=None, job_title=None, email=None, phone=None, mobile_phone=None, is_contact_person=None, in_ignore_mode=None, created_on=None, last_modified=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        end_user_id=None,
+        customer_id=None,
+        customer_name=None,
+        firstname=None,
+        lastname=None,
+        job_title=None,
+        email=None,
+        phone=None,
+        mobile_phone=None,
+        is_contact_person=None,
+        in_ignore_mode=None,
+        created_on=None,
+        last_modified=None,
+        _configuration=None,
+    ):  # noqa: E501
         """ContactQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -392,18 +408,16 @@ class ContactQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(ContactQueryDTO, dict):

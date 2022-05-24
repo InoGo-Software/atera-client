@@ -33,26 +33,36 @@ class UpdateContactDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'firstname': 'str',
-        'lastname': 'str',
-        'job_title': 'str',
-        'phone': 'str',
-        'mobile_phone': 'str',
-        'is_contact_person': 'bool',
-        'in_ignore_mode': 'bool'
+        "firstname": "str",
+        "lastname": "str",
+        "job_title": "str",
+        "phone": "str",
+        "mobile_phone": "str",
+        "is_contact_person": "bool",
+        "in_ignore_mode": "bool",
     }
 
     attribute_map = {
-        'firstname': 'Firstname',
-        'lastname': 'Lastname',
-        'job_title': 'JobTitle',
-        'phone': 'Phone',
-        'mobile_phone': 'MobilePhone',
-        'is_contact_person': 'IsContactPerson',
-        'in_ignore_mode': 'InIgnoreMode'
+        "firstname": "Firstname",
+        "lastname": "Lastname",
+        "job_title": "JobTitle",
+        "phone": "Phone",
+        "mobile_phone": "MobilePhone",
+        "is_contact_person": "IsContactPerson",
+        "in_ignore_mode": "InIgnoreMode",
     }
 
-    def __init__(self, firstname=None, lastname=None, job_title=None, phone=None, mobile_phone=None, is_contact_person=None, in_ignore_mode=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        firstname=None,
+        lastname=None,
+        job_title=None,
+        phone=None,
+        mobile_phone=None,
+        is_contact_person=None,
+        in_ignore_mode=None,
+        _configuration=None,
+    ):  # noqa: E501
         """UpdateContactDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -236,18 +246,16 @@ class UpdateContactDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(UpdateContactDTO, dict):

@@ -33,48 +33,69 @@ class ContractQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'customer_id': 'int',
-        'customer_name': 'str',
-        'contract_id': 'int',
-        'contract_name': 'str',
-        'contract_type': 'str',
-        'active': 'bool',
-        'default': 'bool',
-        'taxable': 'bool',
-        'start_date': 'datetime',
-        'end_date': 'datetime',
-        'retainer_flat_fee_contract': 'RetainerFlatFeeContractQueryDTO',
-        'hourly_contract': 'HourlyContractQueryDTO',
-        'block_hours_contract': 'BlockHoursContractQueryDTO',
-        'block_money_contract': 'BlockMoneyContractQueryDTO',
-        'remote_monitoring_contract': 'RemoteMonitoringContractQueryDTO',
-        'online_backup_contract': 'OnlineBackupContractQueryDTO',
-        'project_one_time_fee_contract': 'ProjectOneTimeFeeContractQueryDTO',
-        'project_hourly_rate_contract': 'ProjectHourlyRateContractQueryDTO'
+        "customer_id": "int",
+        "customer_name": "str",
+        "contract_id": "int",
+        "contract_name": "str",
+        "contract_type": "str",
+        "active": "bool",
+        "default": "bool",
+        "taxable": "bool",
+        "start_date": "datetime",
+        "end_date": "datetime",
+        "retainer_flat_fee_contract": "RetainerFlatFeeContractQueryDTO",
+        "hourly_contract": "HourlyContractQueryDTO",
+        "block_hours_contract": "BlockHoursContractQueryDTO",
+        "block_money_contract": "BlockMoneyContractQueryDTO",
+        "remote_monitoring_contract": "RemoteMonitoringContractQueryDTO",
+        "online_backup_contract": "OnlineBackupContractQueryDTO",
+        "project_one_time_fee_contract": "ProjectOneTimeFeeContractQueryDTO",
+        "project_hourly_rate_contract": "ProjectHourlyRateContractQueryDTO",
     }
 
     attribute_map = {
-        'customer_id': 'CustomerID',
-        'customer_name': 'CustomerName',
-        'contract_id': 'ContractID',
-        'contract_name': 'ContractName',
-        'contract_type': 'ContractType',
-        'active': 'Active',
-        'default': 'Default',
-        'taxable': 'Taxable',
-        'start_date': 'StartDate',
-        'end_date': 'EndDate',
-        'retainer_flat_fee_contract': 'RetainerFlatFeeContract',
-        'hourly_contract': 'HourlyContract',
-        'block_hours_contract': 'BlockHoursContract',
-        'block_money_contract': 'BlockMoneyContract',
-        'remote_monitoring_contract': 'RemoteMonitoringContract',
-        'online_backup_contract': 'OnlineBackupContract',
-        'project_one_time_fee_contract': 'ProjectOneTimeFeeContract',
-        'project_hourly_rate_contract': 'ProjectHourlyRateContract'
+        "customer_id": "CustomerID",
+        "customer_name": "CustomerName",
+        "contract_id": "ContractID",
+        "contract_name": "ContractName",
+        "contract_type": "ContractType",
+        "active": "Active",
+        "default": "Default",
+        "taxable": "Taxable",
+        "start_date": "StartDate",
+        "end_date": "EndDate",
+        "retainer_flat_fee_contract": "RetainerFlatFeeContract",
+        "hourly_contract": "HourlyContract",
+        "block_hours_contract": "BlockHoursContract",
+        "block_money_contract": "BlockMoneyContract",
+        "remote_monitoring_contract": "RemoteMonitoringContract",
+        "online_backup_contract": "OnlineBackupContract",
+        "project_one_time_fee_contract": "ProjectOneTimeFeeContract",
+        "project_hourly_rate_contract": "ProjectHourlyRateContract",
     }
 
-    def __init__(self, customer_id=None, customer_name=None, contract_id=None, contract_name=None, contract_type=None, active=None, default=None, taxable=None, start_date=None, end_date=None, retainer_flat_fee_contract=None, hourly_contract=None, block_hours_contract=None, block_money_contract=None, remote_monitoring_contract=None, online_backup_contract=None, project_one_time_fee_contract=None, project_hourly_rate_contract=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        customer_id=None,
+        customer_name=None,
+        contract_id=None,
+        contract_name=None,
+        contract_type=None,
+        active=None,
+        default=None,
+        taxable=None,
+        start_date=None,
+        end_date=None,
+        retainer_flat_fee_contract=None,
+        hourly_contract=None,
+        block_hours_contract=None,
+        block_money_contract=None,
+        remote_monitoring_contract=None,
+        online_backup_contract=None,
+        project_one_time_fee_contract=None,
+        project_hourly_rate_contract=None,
+        _configuration=None,
+    ):  # noqa: E501
         """ContractQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -239,12 +260,21 @@ class ContractQueryDTO(object):
         :param contract_type: The contract_type of this ContractQueryDTO.  # noqa: E501
         :type: str
         """
-        allowed_values = ["RetainerFlatFee", "BlockHours", "Hourly", "RemoteMonitoring", "BlockMoney", "ProjectOneTimeFee", "ProjectHourlyRate", "OnlineBackup"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                contract_type not in allowed_values):
+        allowed_values = [
+            "RetainerFlatFee",
+            "BlockHours",
+            "Hourly",
+            "RemoteMonitoring",
+            "BlockMoney",
+            "ProjectOneTimeFee",
+            "ProjectHourlyRate",
+            "OnlineBackup",
+        ]  # noqa: E501
+        if self._configuration.client_side_validation and contract_type not in allowed_values:
             raise ValueError(
-                "Invalid value for `contract_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(contract_type, allowed_values)
+                "Invalid value for `contract_type` ({0}), must be one of {1}".format(  # noqa: E501
+                    contract_type, allowed_values
+                )
             )
 
         self._contract_type = contract_type
@@ -529,18 +559,16 @@ class ContractQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(ContractQueryDTO, dict):

@@ -48,8 +48,8 @@ class AgentApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.agent_agent_query_dto_with_http_info(agent_id, **kwargs)  # noqa: E501
         else:
             (data) = self.agent_agent_query_dto_with_http_info(agent_id, **kwargs)  # noqa: E501
@@ -71,31 +71,31 @@ class AgentApi(object):
                  returns the request thread.
         """
 
-        all_params = ['agent_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["agent_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method agent_agent_query_dto" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method agent_agent_query_dto" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'agent_id' is set
-        if self.api_client.client_side_validation and ('agent_id' not in params or
-                                                       params['agent_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent_id` when calling `agent_agent_query_dto`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent_id" not in params or params["agent_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent_id` when calling `agent_agent_query_dto`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'agent_id' in params:
-            path_params['agentId'] = params['agent_id']  # noqa: E501
+        if "agent_id" in params:
+            path_params["agentId"] = params["agent_id"]  # noqa: E501
 
         query_params = []
 
@@ -106,27 +106,30 @@ class AgentApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/agents/{agentId}', 'GET',
+            "/api/v3/agents/{agentId}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AgentQueryDTO',  # noqa: E501
+            response_type="AgentQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def agent_delete(self, agent_id, **kwargs):  # noqa: E501
         """Delete specified agent  # noqa: E501
@@ -143,8 +146,8 @@ class AgentApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.agent_delete_with_http_info(agent_id, **kwargs)  # noqa: E501
         else:
             (data) = self.agent_delete_with_http_info(agent_id, **kwargs)  # noqa: E501
@@ -166,31 +169,29 @@ class AgentApi(object):
                  returns the request thread.
         """
 
-        all_params = ['agent_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["agent_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method agent_delete" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method agent_delete" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'agent_id' is set
-        if self.api_client.client_side_validation and ('agent_id' not in params or
-                                                       params['agent_id'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent_id" not in params or params["agent_id"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `agent_id` when calling `agent_delete`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'agent_id' in params:
-            path_params['agentId'] = params['agent_id']  # noqa: E501
+        if "agent_id" in params:
+            path_params["agentId"] = params["agent_id"]  # noqa: E501
 
         query_params = []
 
@@ -201,27 +202,30 @@ class AgentApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/agents/{agentId}', 'DELETE',
+            "/api/v3/agents/{agentId}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def agent_get(self, **kwargs):  # noqa: E501
         """Find agents  # noqa: E501
@@ -239,8 +243,8 @@ class AgentApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.agent_get_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.agent_get_with_http_info(**kwargs)  # noqa: E501
@@ -263,31 +267,28 @@ class AgentApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'items_in_page']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["page", "items_in_page"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method agent_get" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method agent_get" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
-        if 'items_in_page' in params:
-            query_params.append(('itemsInPage', params['items_in_page']))  # noqa: E501
+        if "page" in params:
+            query_params.append(("page", params["page"]))  # noqa: E501
+        if "items_in_page" in params:
+            query_params.append(("itemsInPage", params["items_in_page"]))  # noqa: E501
 
         header_params = {}
 
@@ -296,27 +297,28 @@ class AgentApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/agents', 'GET',
+            "/api/v3/agents",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='APIResultWrapperAgentQueryDTO',  # noqa: E501
+            response_type="APIResultWrapperAgentQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def agent_get_agents_by_machine_name(self, machine_name, **kwargs):  # noqa: E501
         """Get agents for specified machine.  # noqa: E501
@@ -335,8 +337,8 @@ class AgentApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.agent_get_agents_by_machine_name_with_http_info(machine_name, **kwargs)  # noqa: E501
         else:
             (data) = self.agent_get_agents_by_machine_name_with_http_info(machine_name, **kwargs)  # noqa: E501
@@ -360,37 +362,39 @@ class AgentApi(object):
                  returns the request thread.
         """
 
-        all_params = ['machine_name', 'page', 'items_in_page']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["machine_name", "page", "items_in_page"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method agent_get_agents_by_machine_name" % key
+                    "Got an unexpected keyword argument '%s'" " to method agent_get_agents_by_machine_name" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'machine_name' is set
-        if self.api_client.client_side_validation and ('machine_name' not in params or
-                                                       params['machine_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `machine_name` when calling `agent_get_agents_by_machine_name`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "machine_name" not in params or params["machine_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `machine_name` when calling `agent_get_agents_by_machine_name`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'machine_name' in params:
-            path_params['machineName'] = params['machine_name']  # noqa: E501
+        if "machine_name" in params:
+            path_params["machineName"] = params["machine_name"]  # noqa: E501
 
         query_params = []
-        if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
-        if 'items_in_page' in params:
-            query_params.append(('itemsInPage', params['items_in_page']))  # noqa: E501
+        if "page" in params:
+            query_params.append(("page", params["page"]))  # noqa: E501
+        if "items_in_page" in params:
+            query_params.append(("itemsInPage", params["items_in_page"]))  # noqa: E501
 
         header_params = {}
 
@@ -399,27 +403,28 @@ class AgentApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/agents/machine/{machineName}', 'GET',
+            "/api/v3/agents/machine/{machineName}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='APIResultWrapperAgentQueryDTO',  # noqa: E501
+            response_type="APIResultWrapperAgentQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def agent_get_by_customer(self, customer_id, **kwargs):  # noqa: E501
         """Find agents for specified customer  # noqa: E501
@@ -438,8 +443,8 @@ class AgentApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.agent_get_by_customer_with_http_info(customer_id, **kwargs)  # noqa: E501
         else:
             (data) = self.agent_get_by_customer_with_http_info(customer_id, **kwargs)  # noqa: E501
@@ -463,37 +468,37 @@ class AgentApi(object):
                  returns the request thread.
         """
 
-        all_params = ['customer_id', 'page', 'items_in_page']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["customer_id", "page", "items_in_page"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method agent_get_by_customer" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method agent_get_by_customer" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'customer_id' is set
-        if self.api_client.client_side_validation and ('customer_id' not in params or
-                                                       params['customer_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `customer_id` when calling `agent_get_by_customer`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "customer_id" not in params or params["customer_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `customer_id` when calling `agent_get_by_customer`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'customer_id' in params:
-            path_params['customerId'] = params['customer_id']  # noqa: E501
+        if "customer_id" in params:
+            path_params["customerId"] = params["customer_id"]  # noqa: E501
 
         query_params = []
-        if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
-        if 'items_in_page' in params:
-            query_params.append(('itemsInPage', params['items_in_page']))  # noqa: E501
+        if "page" in params:
+            query_params.append(("page", params["page"]))  # noqa: E501
+        if "items_in_page" in params:
+            query_params.append(("itemsInPage", params["items_in_page"]))  # noqa: E501
 
         header_params = {}
 
@@ -502,24 +507,25 @@ class AgentApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/agents/customer/{customerId}', 'GET',
+            "/api/v3/agents/customer/{customerId}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='APIResultWrapperAgentQueryDTO',  # noqa: E501
+            response_type="APIResultWrapperAgentQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

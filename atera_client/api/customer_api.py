@@ -48,8 +48,8 @@ class CustomerApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.customer_delete_with_http_info(customer_id, **kwargs)  # noqa: E501
         else:
             (data) = self.customer_delete_with_http_info(customer_id, **kwargs)  # noqa: E501
@@ -71,31 +71,31 @@ class CustomerApi(object):
                  returns the request thread.
         """
 
-        all_params = ['customer_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["customer_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method customer_delete" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method customer_delete" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'customer_id' is set
-        if self.api_client.client_side_validation and ('customer_id' not in params or
-                                                       params['customer_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `customer_id` when calling `customer_delete`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "customer_id" not in params or params["customer_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `customer_id` when calling `customer_delete`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'customer_id' in params:
-            path_params['customerId'] = params['customer_id']  # noqa: E501
+        if "customer_id" in params:
+            path_params["customerId"] = params["customer_id"]  # noqa: E501
 
         query_params = []
 
@@ -106,27 +106,30 @@ class CustomerApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customers/{customerId}', 'DELETE',
+            "/api/v3/customers/{customerId}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Object',  # noqa: E501
+            response_type="Object",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def customer_get(self, **kwargs):  # noqa: E501
         """Find Customers  # noqa: E501
@@ -144,8 +147,8 @@ class CustomerApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.customer_get_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.customer_get_with_http_info(**kwargs)  # noqa: E501
@@ -168,31 +171,28 @@ class CustomerApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'items_in_page']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["page", "items_in_page"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method customer_get" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method customer_get" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
-        if 'items_in_page' in params:
-            query_params.append(('itemsInPage', params['items_in_page']))  # noqa: E501
+        if "page" in params:
+            query_params.append(("page", params["page"]))  # noqa: E501
+        if "items_in_page" in params:
+            query_params.append(("itemsInPage", params["items_in_page"]))  # noqa: E501
 
         header_params = {}
 
@@ -201,27 +201,28 @@ class CustomerApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customers', 'GET',
+            "/api/v3/customers",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='APIResultWrapperCustomerQueryDTO',  # noqa: E501
+            response_type="APIResultWrapperCustomerQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def customer_get_0(self, customer_id, **kwargs):  # noqa: E501
         """Find specified customer  # noqa: E501
@@ -238,8 +239,8 @@ class CustomerApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.customer_get_0_with_http_info(customer_id, **kwargs)  # noqa: E501
         else:
             (data) = self.customer_get_0_with_http_info(customer_id, **kwargs)  # noqa: E501
@@ -261,31 +262,29 @@ class CustomerApi(object):
                  returns the request thread.
         """
 
-        all_params = ['customer_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["customer_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method customer_get_0" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method customer_get_0" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'customer_id' is set
-        if self.api_client.client_side_validation and ('customer_id' not in params or
-                                                       params['customer_id'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "customer_id" not in params or params["customer_id"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `customer_id` when calling `customer_get_0`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'customer_id' in params:
-            path_params['customerId'] = params['customer_id']  # noqa: E501
+        if "customer_id" in params:
+            path_params["customerId"] = params["customer_id"]  # noqa: E501
 
         query_params = []
 
@@ -296,27 +295,30 @@ class CustomerApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/json", "application/xml", "text/xml"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customers/{customerId}', 'GET',
+            "/api/v3/customers/{customerId}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CustomerQueryDTO',  # noqa: E501
+            response_type="CustomerQueryDTO",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def customer_post(self, customer, **kwargs):  # noqa: E501
         """Create Customer  # noqa: E501
@@ -333,8 +335,8 @@ class CustomerApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.customer_post_with_http_info(customer, **kwargs)  # noqa: E501
         else:
             (data) = self.customer_post_with_http_info(customer, **kwargs)  # noqa: E501
@@ -356,24 +358,22 @@ class CustomerApi(object):
                  returns the request thread.
         """
 
-        all_params = ['customer']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["customer"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method customer_post" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method customer_post" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'customer' is set
-        if self.api_client.client_side_validation and ('customer' not in params or
-                                                       params['customer'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "customer" not in params or params["customer"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `customer` when calling `customer_post`")  # noqa: E501
 
         collection_formats = {}
@@ -388,34 +388,36 @@ class CustomerApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'customer' in params:
-            body_params = params['customer']
+        if "customer" in params:
+            body_params = params["customer"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customers', 'POST',
+            "/api/v3/customers",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Result',  # noqa: E501
+            response_type="Result",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def customer_post_0(self, folder, **kwargs):  # noqa: E501
         """Create Customer Folder  # noqa: E501
@@ -432,8 +434,8 @@ class CustomerApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.customer_post_0_with_http_info(folder, **kwargs)  # noqa: E501
         else:
             (data) = self.customer_post_0_with_http_info(folder, **kwargs)  # noqa: E501
@@ -455,24 +457,22 @@ class CustomerApi(object):
                  returns the request thread.
         """
 
-        all_params = ['folder']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["folder"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method customer_post_0" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method customer_post_0" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'folder' is set
-        if self.api_client.client_side_validation and ('folder' not in params or
-                                                       params['folder'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "folder" not in params or params["folder"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `folder` when calling `customer_post_0`")  # noqa: E501
 
         collection_formats = {}
@@ -487,34 +487,36 @@ class CustomerApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'folder' in params:
-            body_params = params['folder']
+        if "folder" in params:
+            body_params = params["folder"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customers/folders', 'POST',
+            "/api/v3/customers/folders",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Result',  # noqa: E501
+            response_type="Result",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def customer_post_1(self, attachment, **kwargs):  # noqa: E501
         """Create Customer Attachment  # noqa: E501
@@ -531,8 +533,8 @@ class CustomerApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.customer_post_1_with_http_info(attachment, **kwargs)  # noqa: E501
         else:
             (data) = self.customer_post_1_with_http_info(attachment, **kwargs)  # noqa: E501
@@ -554,24 +556,22 @@ class CustomerApi(object):
                  returns the request thread.
         """
 
-        all_params = ['attachment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["attachment"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method customer_post_1" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method customer_post_1" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'attachment' is set
-        if self.api_client.client_side_validation and ('attachment' not in params or
-                                                       params['attachment'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "attachment" not in params or params["attachment"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `attachment` when calling `customer_post_1`")  # noqa: E501
 
         collection_formats = {}
@@ -586,34 +586,36 @@ class CustomerApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'attachment' in params:
-            body_params = params['attachment']
+        if "attachment" in params:
+            body_params = params["attachment"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customers/attachments', 'POST',
+            "/api/v3/customers/attachments",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Result',  # noqa: E501
+            response_type="Result",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def customer_put(self, customer_id, customer, **kwargs):  # noqa: E501
         """Update specified customer  # noqa: E501
@@ -631,8 +633,8 @@ class CustomerApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.customer_put_with_http_info(customer_id, customer, **kwargs)  # noqa: E501
         else:
             (data) = self.customer_put_with_http_info(customer_id, customer, **kwargs)  # noqa: E501
@@ -655,35 +657,34 @@ class CustomerApi(object):
                  returns the request thread.
         """
 
-        all_params = ['customer_id', 'customer']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["customer_id", "customer"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method customer_put" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method customer_put" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'customer_id' is set
-        if self.api_client.client_side_validation and ('customer_id' not in params or
-                                                       params['customer_id'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "customer_id" not in params or params["customer_id"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `customer_id` when calling `customer_put`")  # noqa: E501
         # verify the required parameter 'customer' is set
-        if self.api_client.client_side_validation and ('customer' not in params or
-                                                       params['customer'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "customer" not in params or params["customer"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `customer` when calling `customer_put`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'customer_id' in params:
-            path_params['customerId'] = params['customer_id']  # noqa: E501
+        if "customer_id" in params:
+            path_params["customerId"] = params["customer_id"]  # noqa: E501
 
         query_params = []
 
@@ -693,34 +694,36 @@ class CustomerApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'customer' in params:
-            body_params = params['customer']
+        if "customer" in params:
+            body_params = params["customer"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customers/{customerId}', 'PUT',
+            "/api/v3/customers/{customerId}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Result',  # noqa: E501
+            response_type="Result",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def customer_put_0(self, customer_id, customer, **kwargs):  # noqa: E501
         """Update specified customer  # noqa: E501
@@ -738,8 +741,8 @@ class CustomerApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.customer_put_0_with_http_info(customer_id, customer, **kwargs)  # noqa: E501
         else:
             (data) = self.customer_put_0_with_http_info(customer_id, customer, **kwargs)  # noqa: E501
@@ -762,35 +765,34 @@ class CustomerApi(object):
                  returns the request thread.
         """
 
-        all_params = ['customer_id', 'customer']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["customer_id", "customer"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method customer_put_0" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method customer_put_0" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'customer_id' is set
-        if self.api_client.client_side_validation and ('customer_id' not in params or
-                                                       params['customer_id'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "customer_id" not in params or params["customer_id"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `customer_id` when calling `customer_put_0`")  # noqa: E501
         # verify the required parameter 'customer' is set
-        if self.api_client.client_side_validation and ('customer' not in params or
-                                                       params['customer'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "customer" not in params or params["customer"] is None
+        ):  # noqa: E501
             raise ValueError("Missing the required parameter `customer` when calling `customer_put_0`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'customer_id' in params:
-            path_params['customerId'] = params['customer_id']  # noqa: E501
+        if "customer_id" in params:
+            path_params["customerId"] = params["customer_id"]  # noqa: E501
 
         query_params = []
 
@@ -800,31 +802,33 @@ class CustomerApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'customer' in params:
-            body_params = params['customer']
+        if "customer" in params:
+            body_params = params["customer"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v3/customers/{customerId}', 'POST',
+            "/api/v3/customers/{customerId}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Result',  # noqa: E501
+            response_type="Result",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

@@ -33,44 +33,63 @@ class InvoiceQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'is_adhoc': 'bool',
-        'invoice_id': 'str',
-        'invoice_number': 'int',
-        'invoice_number_as_string': 'str',
-        'total': 'float',
-        'subtotal': 'float',
-        'tax': 'float',
-        'tax_percentage': 'float',
-        'invoice_date': 'datetime',
-        'contract_name': 'str',
-        'period_start_date': 'datetime',
-        'period_end_date': 'datetime',
-        'currency': 'str',
-        'line_items': 'list[InvoiceLineItemQueryDTO]',
-        '_from': 'ContactDetails',
-        'to': 'ContactDetails'
+        "is_adhoc": "bool",
+        "invoice_id": "str",
+        "invoice_number": "int",
+        "invoice_number_as_string": "str",
+        "total": "float",
+        "subtotal": "float",
+        "tax": "float",
+        "tax_percentage": "float",
+        "invoice_date": "datetime",
+        "contract_name": "str",
+        "period_start_date": "datetime",
+        "period_end_date": "datetime",
+        "currency": "str",
+        "line_items": "list[InvoiceLineItemQueryDTO]",
+        "_from": "ContactDetails",
+        "to": "ContactDetails",
     }
 
     attribute_map = {
-        'is_adhoc': 'IsAdhoc',
-        'invoice_id': 'InvoiceId',
-        'invoice_number': 'InvoiceNumber',
-        'invoice_number_as_string': 'InvoiceNumberAsString',
-        'total': 'Total',
-        'subtotal': 'Subtotal',
-        'tax': 'Tax',
-        'tax_percentage': 'TaxPercentage',
-        'invoice_date': 'InvoiceDate',
-        'contract_name': 'ContractName',
-        'period_start_date': 'PeriodStartDate',
-        'period_end_date': 'PeriodEndDate',
-        'currency': 'Currency',
-        'line_items': 'LineItems',
-        '_from': 'From',
-        'to': 'To'
+        "is_adhoc": "IsAdhoc",
+        "invoice_id": "InvoiceId",
+        "invoice_number": "InvoiceNumber",
+        "invoice_number_as_string": "InvoiceNumberAsString",
+        "total": "Total",
+        "subtotal": "Subtotal",
+        "tax": "Tax",
+        "tax_percentage": "TaxPercentage",
+        "invoice_date": "InvoiceDate",
+        "contract_name": "ContractName",
+        "period_start_date": "PeriodStartDate",
+        "period_end_date": "PeriodEndDate",
+        "currency": "Currency",
+        "line_items": "LineItems",
+        "_from": "From",
+        "to": "To",
     }
 
-    def __init__(self, is_adhoc=None, invoice_id=None, invoice_number=None, invoice_number_as_string=None, total=None, subtotal=None, tax=None, tax_percentage=None, invoice_date=None, contract_name=None, period_start_date=None, period_end_date=None, currency=None, line_items=None, _from=None, to=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        is_adhoc=None,
+        invoice_id=None,
+        invoice_number=None,
+        invoice_number_as_string=None,
+        total=None,
+        subtotal=None,
+        tax=None,
+        tax_percentage=None,
+        invoice_date=None,
+        contract_name=None,
+        period_start_date=None,
+        period_end_date=None,
+        currency=None,
+        line_items=None,
+        _from=None,
+        to=None,
+        _configuration=None,
+    ):  # noqa: E501
         """InvoiceQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -470,18 +489,16 @@ class InvoiceQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(InvoiceQueryDTO, dict):

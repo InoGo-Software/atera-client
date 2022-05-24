@@ -31,6 +31,7 @@ from atera_client.api.ticket_api import TicketApi
 # import ApiClient
 from atera_client.api_client import ApiClient
 from atera_client.configuration import Configuration
+
 # import models into sdk package
 from atera_client.models.api_result_wrapper_agent_query_dto import APIResultWrapperAgentQueryDTO
 from atera_client.models.api_result_wrapper_alert_query_dto import APIResultWrapperAlertQueryDTO
@@ -46,7 +47,9 @@ from atera_client.models.api_result_wrapper_snmp_device_query_dto import APIResu
 from atera_client.models.api_result_wrapper_tcp_device_query_dto import APIResultWrapperTcpDeviceQueryDTO
 from atera_client.models.api_result_wrapper_ticket_comment_query_dto import APIResultWrapperTicketCommentQueryDTO
 from atera_client.models.api_result_wrapper_ticket_query_dto import APIResultWrapperTicketQueryDTO
-from atera_client.models.api_result_wrapper_ticket_time_entries_query_dto import APIResultWrapperTicketTimeEntriesQueryDTO
+from atera_client.models.api_result_wrapper_ticket_time_entries_query_dto import (
+    APIResultWrapperTicketTimeEntriesQueryDTO,
+)
 from atera_client.models.agent_query_dto import AgentQueryDTO
 from atera_client.models.alert_query_dto import AlertQueryDTO
 from atera_client.models.block_hours_contract_query_dto import BlockHoursContractQueryDTO

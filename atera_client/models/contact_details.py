@@ -33,34 +33,48 @@ class ContactDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'company_name': 'str',
-        'contact_first_name': 'str',
-        'contact_last_name': 'str',
-        'contact_full_name': 'str',
-        'address': 'str',
-        'state': 'str',
-        'country': 'str',
-        'zip_code': 'int',
-        'city': 'str',
-        'phone': 'str',
-        'email': 'str'
+        "company_name": "str",
+        "contact_first_name": "str",
+        "contact_last_name": "str",
+        "contact_full_name": "str",
+        "address": "str",
+        "state": "str",
+        "country": "str",
+        "zip_code": "int",
+        "city": "str",
+        "phone": "str",
+        "email": "str",
     }
 
     attribute_map = {
-        'company_name': 'CompanyName',
-        'contact_first_name': 'ContactFirstName',
-        'contact_last_name': 'ContactLastName',
-        'contact_full_name': 'ContactFullName',
-        'address': 'Address',
-        'state': 'State',
-        'country': 'Country',
-        'zip_code': 'ZipCode',
-        'city': 'City',
-        'phone': 'Phone',
-        'email': 'Email'
+        "company_name": "CompanyName",
+        "contact_first_name": "ContactFirstName",
+        "contact_last_name": "ContactLastName",
+        "contact_full_name": "ContactFullName",
+        "address": "Address",
+        "state": "State",
+        "country": "Country",
+        "zip_code": "ZipCode",
+        "city": "City",
+        "phone": "Phone",
+        "email": "Email",
     }
 
-    def __init__(self, company_name=None, contact_first_name=None, contact_last_name=None, contact_full_name=None, address=None, state=None, country=None, zip_code=None, city=None, phone=None, email=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        company_name=None,
+        contact_first_name=None,
+        contact_last_name=None,
+        contact_full_name=None,
+        address=None,
+        state=None,
+        country=None,
+        zip_code=None,
+        city=None,
+        phone=None,
+        email=None,
+        _configuration=None,
+    ):  # noqa: E501
         """ContactDetails - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -340,18 +354,16 @@ class ContactDetails(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(ContactDetails, dict):

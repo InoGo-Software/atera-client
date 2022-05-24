@@ -33,32 +33,45 @@ class TicketTimeEntriesQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ticket_id': 'int',
-        'work_hours_id': 'int',
-        'start_work_hour': 'datetime',
-        'end_work_hour': 'datetime',
-        'technician_contact_id': 'int',
-        'billiable': 'bool',
-        'on_customer_site': 'bool',
-        'description': 'str',
-        'technician_full_name': 'str',
-        'technician_email': 'str'
+        "ticket_id": "int",
+        "work_hours_id": "int",
+        "start_work_hour": "datetime",
+        "end_work_hour": "datetime",
+        "technician_contact_id": "int",
+        "billiable": "bool",
+        "on_customer_site": "bool",
+        "description": "str",
+        "technician_full_name": "str",
+        "technician_email": "str",
     }
 
     attribute_map = {
-        'ticket_id': 'TicketID',
-        'work_hours_id': 'WorkHoursID',
-        'start_work_hour': 'StartWorkHour',
-        'end_work_hour': 'EndWorkHour',
-        'technician_contact_id': 'TechnicianContactID',
-        'billiable': 'Billiable',
-        'on_customer_site': 'OnCustomerSite',
-        'description': 'Description',
-        'technician_full_name': 'TechnicianFullName',
-        'technician_email': 'TechnicianEmail'
+        "ticket_id": "TicketID",
+        "work_hours_id": "WorkHoursID",
+        "start_work_hour": "StartWorkHour",
+        "end_work_hour": "EndWorkHour",
+        "technician_contact_id": "TechnicianContactID",
+        "billiable": "Billiable",
+        "on_customer_site": "OnCustomerSite",
+        "description": "Description",
+        "technician_full_name": "TechnicianFullName",
+        "technician_email": "TechnicianEmail",
     }
 
-    def __init__(self, ticket_id=None, work_hours_id=None, start_work_hour=None, end_work_hour=None, technician_contact_id=None, billiable=None, on_customer_site=None, description=None, technician_full_name=None, technician_email=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        ticket_id=None,
+        work_hours_id=None,
+        start_work_hour=None,
+        end_work_hour=None,
+        technician_contact_id=None,
+        billiable=None,
+        on_customer_site=None,
+        description=None,
+        technician_full_name=None,
+        technician_email=None,
+        _configuration=None,
+    ):  # noqa: E501
         """TicketTimeEntriesQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -314,18 +327,16 @@ class TicketTimeEntriesQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(TicketTimeEntriesQueryDTO, dict):

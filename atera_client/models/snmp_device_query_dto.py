@@ -33,46 +33,66 @@ class SNMPDeviceQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'device_id': 'int',
-        'device_guid': 'str',
-        'customer_id': 'int',
-        'customer_name': 'str',
-        'folder_id': 'int',
-        'hostname': 'str',
-        'online': 'bool',
-        'port': 'str',
-        'community': 'str',
-        'type': 'str',
-        'version': 'str',
-        'security_level': 'str',
-        'authentication': 'str',
-        'privacy': 'str',
-        'monitored': 'bool',
-        'monitoring_agent_id': 'int'
+        "name": "str",
+        "device_id": "int",
+        "device_guid": "str",
+        "customer_id": "int",
+        "customer_name": "str",
+        "folder_id": "int",
+        "hostname": "str",
+        "online": "bool",
+        "port": "str",
+        "community": "str",
+        "type": "str",
+        "version": "str",
+        "security_level": "str",
+        "authentication": "str",
+        "privacy": "str",
+        "monitored": "bool",
+        "monitoring_agent_id": "int",
     }
 
     attribute_map = {
-        'name': 'Name',
-        'device_id': 'DeviceID',
-        'device_guid': 'DeviceGuid',
-        'customer_id': 'CustomerID',
-        'customer_name': 'CustomerName',
-        'folder_id': 'FolderID',
-        'hostname': 'Hostname',
-        'online': 'Online',
-        'port': 'Port',
-        'community': 'Community',
-        'type': 'Type',
-        'version': 'Version',
-        'security_level': 'SecurityLevel',
-        'authentication': 'Authentication',
-        'privacy': 'Privacy',
-        'monitored': 'Monitored',
-        'monitoring_agent_id': 'MonitoringAgentID'
+        "name": "Name",
+        "device_id": "DeviceID",
+        "device_guid": "DeviceGuid",
+        "customer_id": "CustomerID",
+        "customer_name": "CustomerName",
+        "folder_id": "FolderID",
+        "hostname": "Hostname",
+        "online": "Online",
+        "port": "Port",
+        "community": "Community",
+        "type": "Type",
+        "version": "Version",
+        "security_level": "SecurityLevel",
+        "authentication": "Authentication",
+        "privacy": "Privacy",
+        "monitored": "Monitored",
+        "monitoring_agent_id": "MonitoringAgentID",
     }
 
-    def __init__(self, name=None, device_id=None, device_guid=None, customer_id=None, customer_name=None, folder_id=None, hostname=None, online=None, port=None, community=None, type=None, version=None, security_level=None, authentication=None, privacy=None, monitored=None, monitoring_agent_id=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        name=None,
+        device_id=None,
+        device_guid=None,
+        customer_id=None,
+        customer_name=None,
+        folder_id=None,
+        hostname=None,
+        online=None,
+        port=None,
+        community=None,
+        type=None,
+        version=None,
+        security_level=None,
+        authentication=None,
+        privacy=None,
+        monitored=None,
+        monitoring_agent_id=None,
+        _configuration=None,
+    ):  # noqa: E501
         """SNMPDeviceQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -403,11 +423,11 @@ class SNMPDeviceQueryDTO(object):
         :type: str
         """
         allowed_values = ["Undefined", "Authentication", "AuthenticationAndPrivacy"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                security_level not in allowed_values):
+        if self._configuration.client_side_validation and security_level not in allowed_values:
             raise ValueError(
-                "Invalid value for `security_level` ({0}), must be one of {1}"  # noqa: E501
-                .format(security_level, allowed_values)
+                "Invalid value for `security_level` ({0}), must be one of {1}".format(  # noqa: E501
+                    security_level, allowed_values
+                )
             )
 
         self._security_level = security_level
@@ -503,18 +523,16 @@ class SNMPDeviceQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(SNMPDeviceQueryDTO, dict):

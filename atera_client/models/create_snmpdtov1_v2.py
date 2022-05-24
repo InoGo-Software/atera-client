@@ -33,32 +33,45 @@ class CreateSNMPDTOV1V2(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'community': 'str',
-        'snmp_version': 'str',
-        'hostname': 'str',
-        'port': 'int',
-        'device_type': 'str',
-        'name': 'str',
-        'customer_id': 'int',
-        'folder_id': 'int',
-        'monitoring_agent_id': 'int',
-        'monitored': 'bool'
+        "community": "str",
+        "snmp_version": "str",
+        "hostname": "str",
+        "port": "int",
+        "device_type": "str",
+        "name": "str",
+        "customer_id": "int",
+        "folder_id": "int",
+        "monitoring_agent_id": "int",
+        "monitored": "bool",
     }
 
     attribute_map = {
-        'community': 'Community',
-        'snmp_version': 'SNMPVersion',
-        'hostname': 'Hostname',
-        'port': 'Port',
-        'device_type': 'DeviceType',
-        'name': 'Name',
-        'customer_id': 'CustomerID',
-        'folder_id': 'FolderID',
-        'monitoring_agent_id': 'MonitoringAgentID',
-        'monitored': 'Monitored'
+        "community": "Community",
+        "snmp_version": "SNMPVersion",
+        "hostname": "Hostname",
+        "port": "Port",
+        "device_type": "DeviceType",
+        "name": "Name",
+        "customer_id": "CustomerID",
+        "folder_id": "FolderID",
+        "monitoring_agent_id": "MonitoringAgentID",
+        "monitored": "Monitored",
     }
 
-    def __init__(self, community=None, snmp_version=None, hostname=None, port=None, device_type=None, name=None, customer_id=None, folder_id=None, monitoring_agent_id=None, monitored=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        community=None,
+        snmp_version=None,
+        hostname=None,
+        port=None,
+        device_type=None,
+        name=None,
+        customer_id=None,
+        folder_id=None,
+        monitoring_agent_id=None,
+        monitored=None,
+        _configuration=None,
+    ):  # noqa: E501
         """CreateSNMPDTOV1V2 - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -137,11 +150,11 @@ class CreateSNMPDTOV1V2(object):
         :type: str
         """
         allowed_values = ["V1", "V2"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                snmp_version not in allowed_values):
+        if self._configuration.client_side_validation and snmp_version not in allowed_values:
             raise ValueError(
-                "Invalid value for `snmp_version` ({0}), must be one of {1}"  # noqa: E501
-                .format(snmp_version, allowed_values)
+                "Invalid value for `snmp_version` ({0}), must be one of {1}".format(  # noqa: E501
+                    snmp_version, allowed_values
+                )
             )
 
         self._snmp_version = snmp_version
@@ -206,12 +219,41 @@ class CreateSNMPDTOV1V2(object):
         :param device_type: The device_type of this CreateSNMPDTOV1V2.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Undefined", "Router", "Printer", "Switch", "Print_server", "UPS", "CheckPoint", "Other", "Linux_device", "NAS", "File_server", "Storage", "Access_point", "NetworkBridge_Extender", "Hub", "Firewall", "Gateway", "Layer_3_Switch", "WAN_Accelerator", "Wireless_LAN_Controller", "Access_Server", "IP_Phone", "SAN_Switch", "Load_Balancer", "Web_Caching", "Management_Controller", "Management", "Tape_Library"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                device_type not in allowed_values):
+        allowed_values = [
+            "Undefined",
+            "Router",
+            "Printer",
+            "Switch",
+            "Print_server",
+            "UPS",
+            "CheckPoint",
+            "Other",
+            "Linux_device",
+            "NAS",
+            "File_server",
+            "Storage",
+            "Access_point",
+            "NetworkBridge_Extender",
+            "Hub",
+            "Firewall",
+            "Gateway",
+            "Layer_3_Switch",
+            "WAN_Accelerator",
+            "Wireless_LAN_Controller",
+            "Access_Server",
+            "IP_Phone",
+            "SAN_Switch",
+            "Load_Balancer",
+            "Web_Caching",
+            "Management_Controller",
+            "Management",
+            "Tape_Library",
+        ]  # noqa: E501
+        if self._configuration.client_side_validation and device_type not in allowed_values:
             raise ValueError(
-                "Invalid value for `device_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(device_type, allowed_values)
+                "Invalid value for `device_type` ({0}), must be one of {1}".format(  # noqa: E501
+                    device_type, allowed_values
+                )
             )
 
         self._device_type = device_type
@@ -328,18 +370,16 @@ class CreateSNMPDTOV1V2(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(CreateSNMPDTOV1V2, dict):

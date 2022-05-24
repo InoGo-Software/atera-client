@@ -33,26 +33,36 @@ class CustomValueQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'item_id': 'int',
-        'id': 'str',
-        'field_name': 'str',
-        'value_as_string': 'str',
-        'value_as_decimal': 'float',
-        'value_as_date_time': 'datetime',
-        'value_as_bool': 'bool'
+        "item_id": "int",
+        "id": "str",
+        "field_name": "str",
+        "value_as_string": "str",
+        "value_as_decimal": "float",
+        "value_as_date_time": "datetime",
+        "value_as_bool": "bool",
     }
 
     attribute_map = {
-        'item_id': 'ItemId',
-        'id': 'Id',
-        'field_name': 'FieldName',
-        'value_as_string': 'ValueAsString',
-        'value_as_decimal': 'ValueAsDecimal',
-        'value_as_date_time': 'ValueAsDateTime',
-        'value_as_bool': 'ValueAsBool'
+        "item_id": "ItemId",
+        "id": "Id",
+        "field_name": "FieldName",
+        "value_as_string": "ValueAsString",
+        "value_as_decimal": "ValueAsDecimal",
+        "value_as_date_time": "ValueAsDateTime",
+        "value_as_bool": "ValueAsBool",
     }
 
-    def __init__(self, item_id=None, id=None, field_name=None, value_as_string=None, value_as_decimal=None, value_as_date_time=None, value_as_bool=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        item_id=None,
+        id=None,
+        field_name=None,
+        value_as_string=None,
+        value_as_decimal=None,
+        value_as_date_time=None,
+        value_as_bool=None,
+        _configuration=None,
+    ):  # noqa: E501
         """CustomValueQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -236,18 +246,16 @@ class CustomValueQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(CustomValueQueryDTO, dict):

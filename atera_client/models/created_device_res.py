@@ -32,15 +32,9 @@ class CreatedDeviceRes(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {
-        'device_id': 'int',
-        'device_guid': 'str'
-    }
+    swagger_types = {"device_id": "int", "device_guid": "str"}
 
-    attribute_map = {
-        'device_id': 'DeviceId',
-        'device_guid': 'DeviceGuid'
-    }
+    attribute_map = {"device_id": "DeviceId", "device_guid": "DeviceGuid"}
 
     def __init__(self, device_id=None, device_guid=None, _configuration=None):  # noqa: E501
         """CreatedDeviceRes - a model defined in Swagger"""  # noqa: E501
@@ -106,18 +100,16 @@ class CreatedDeviceRes(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(CreatedDeviceRes, dict):

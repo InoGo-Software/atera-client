@@ -33,44 +33,63 @@ class CreateAlertDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'device_guid': 'str',
-        'title': 'str',
-        'customer_id': 'int',
-        'code': 'int',
-        'severity': 'str',
-        'threshold_value1': 'str',
-        'threshold_value2': 'str',
-        'threshold_value3': 'str',
-        'threshold_value4': 'str',
-        'threshold_value5': 'str',
-        'snoozed_end_date': 'datetime',
-        'additional_info': 'str',
-        'alert_category_id': 'str',
-        'ticket_id': 'int',
-        'message_template': 'str',
-        'folder_id': 'int'
+        "device_guid": "str",
+        "title": "str",
+        "customer_id": "int",
+        "code": "int",
+        "severity": "str",
+        "threshold_value1": "str",
+        "threshold_value2": "str",
+        "threshold_value3": "str",
+        "threshold_value4": "str",
+        "threshold_value5": "str",
+        "snoozed_end_date": "datetime",
+        "additional_info": "str",
+        "alert_category_id": "str",
+        "ticket_id": "int",
+        "message_template": "str",
+        "folder_id": "int",
     }
 
     attribute_map = {
-        'device_guid': 'DeviceGuid',
-        'title': 'Title',
-        'customer_id': 'CustomerID',
-        'code': 'Code',
-        'severity': 'Severity',
-        'threshold_value1': 'ThresholdValue1',
-        'threshold_value2': 'ThresholdValue2',
-        'threshold_value3': 'ThresholdValue3',
-        'threshold_value4': 'ThresholdValue4',
-        'threshold_value5': 'ThresholdValue5',
-        'snoozed_end_date': 'SnoozedEndDate',
-        'additional_info': 'AdditionalInfo',
-        'alert_category_id': 'AlertCategoryID',
-        'ticket_id': 'TicketID',
-        'message_template': 'MessageTemplate',
-        'folder_id': 'FolderID'
+        "device_guid": "DeviceGuid",
+        "title": "Title",
+        "customer_id": "CustomerID",
+        "code": "Code",
+        "severity": "Severity",
+        "threshold_value1": "ThresholdValue1",
+        "threshold_value2": "ThresholdValue2",
+        "threshold_value3": "ThresholdValue3",
+        "threshold_value4": "ThresholdValue4",
+        "threshold_value5": "ThresholdValue5",
+        "snoozed_end_date": "SnoozedEndDate",
+        "additional_info": "AdditionalInfo",
+        "alert_category_id": "AlertCategoryID",
+        "ticket_id": "TicketID",
+        "message_template": "MessageTemplate",
+        "folder_id": "FolderID",
     }
 
-    def __init__(self, device_guid=None, title=None, customer_id=None, code=None, severity=None, threshold_value1=None, threshold_value2=None, threshold_value3=None, threshold_value4=None, threshold_value5=None, snoozed_end_date=None, additional_info=None, alert_category_id=None, ticket_id=None, message_template=None, folder_id=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        device_guid=None,
+        title=None,
+        customer_id=None,
+        code=None,
+        severity=None,
+        threshold_value1=None,
+        threshold_value2=None,
+        threshold_value3=None,
+        threshold_value4=None,
+        threshold_value5=None,
+        snoozed_end_date=None,
+        additional_info=None,
+        alert_category_id=None,
+        ticket_id=None,
+        message_template=None,
+        folder_id=None,
+        _configuration=None,
+    ):  # noqa: E501
         """CreateAlertDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -233,11 +252,9 @@ class CreateAlertDTO(object):
         :type: str
         """
         allowed_values = ["Information", "Warning", "Critical"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                severity not in allowed_values):
+        if self._configuration.client_side_validation and severity not in allowed_values:
             raise ValueError(
-                "Invalid value for `severity` ({0}), must be one of {1}"  # noqa: E501
-                .format(severity, allowed_values)
+                "Invalid value for `severity` ({0}), must be one of {1}".format(severity, allowed_values)  # noqa: E501
             )
 
         self._severity = severity
@@ -408,11 +425,11 @@ class CreateAlertDTO(object):
         :type: str
         """
         allowed_values = ["Hardware", "Disk", "Availability", "Performance", "Exchange", "General"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                alert_category_id not in allowed_values):
+        if self._configuration.client_side_validation and alert_category_id not in allowed_values:
             raise ValueError(
-                "Invalid value for `alert_category_id` ({0}), must be one of {1}"  # noqa: E501
-                .format(alert_category_id, allowed_values)
+                "Invalid value for `alert_category_id` ({0}), must be one of {1}".format(  # noqa: E501
+                    alert_category_id, allowed_values
+                )
             )
 
         self._alert_category_id = alert_category_id
@@ -487,18 +504,16 @@ class CreateAlertDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(CreateAlertDTO, dict):

@@ -33,48 +33,69 @@ class CustomerQueryDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'customer_id': 'int',
-        'customer_name': 'str',
-        'created_on': 'datetime',
-        'last_modified': 'datetime',
-        'business_number': 'str',
-        'domain': 'str',
-        'address': 'str',
-        'city': 'str',
-        'state': 'str',
-        'country': 'str',
-        'phone': 'str',
-        'fax': 'str',
-        'notes': 'str',
-        'logo': 'str',
-        'links': 'str',
-        'longitude': 'float',
-        'latitude': 'float',
-        'zip_code_str': 'str'
+        "customer_id": "int",
+        "customer_name": "str",
+        "created_on": "datetime",
+        "last_modified": "datetime",
+        "business_number": "str",
+        "domain": "str",
+        "address": "str",
+        "city": "str",
+        "state": "str",
+        "country": "str",
+        "phone": "str",
+        "fax": "str",
+        "notes": "str",
+        "logo": "str",
+        "links": "str",
+        "longitude": "float",
+        "latitude": "float",
+        "zip_code_str": "str",
     }
 
     attribute_map = {
-        'customer_id': 'CustomerID',
-        'customer_name': 'CustomerName',
-        'created_on': 'CreatedOn',
-        'last_modified': 'LastModified',
-        'business_number': 'BusinessNumber',
-        'domain': 'Domain',
-        'address': 'Address',
-        'city': 'City',
-        'state': 'State',
-        'country': 'Country',
-        'phone': 'Phone',
-        'fax': 'Fax',
-        'notes': 'Notes',
-        'logo': 'Logo',
-        'links': 'Links',
-        'longitude': 'Longitude',
-        'latitude': 'Latitude',
-        'zip_code_str': 'ZipCodeStr'
+        "customer_id": "CustomerID",
+        "customer_name": "CustomerName",
+        "created_on": "CreatedOn",
+        "last_modified": "LastModified",
+        "business_number": "BusinessNumber",
+        "domain": "Domain",
+        "address": "Address",
+        "city": "City",
+        "state": "State",
+        "country": "Country",
+        "phone": "Phone",
+        "fax": "Fax",
+        "notes": "Notes",
+        "logo": "Logo",
+        "links": "Links",
+        "longitude": "Longitude",
+        "latitude": "Latitude",
+        "zip_code_str": "ZipCodeStr",
     }
 
-    def __init__(self, customer_id=None, customer_name=None, created_on=None, last_modified=None, business_number=None, domain=None, address=None, city=None, state=None, country=None, phone=None, fax=None, notes=None, logo=None, links=None, longitude=None, latitude=None, zip_code_str=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        customer_id=None,
+        customer_name=None,
+        created_on=None,
+        last_modified=None,
+        business_number=None,
+        domain=None,
+        address=None,
+        city=None,
+        state=None,
+        country=None,
+        phone=None,
+        fax=None,
+        notes=None,
+        logo=None,
+        links=None,
+        longitude=None,
+        latitude=None,
+        zip_code_str=None,
+        _configuration=None,
+    ):  # noqa: E501
         """CustomerQueryDTO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -522,18 +543,16 @@ class CustomerQueryDTO(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(CustomerQueryDTO, dict):
