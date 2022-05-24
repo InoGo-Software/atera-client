@@ -118,7 +118,7 @@ class DeviceApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/genericdevice",
@@ -221,7 +221,7 @@ class DeviceApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/httpdevice",
@@ -326,7 +326,7 @@ class DeviceApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/snmpdevice/v1v2",
@@ -431,7 +431,7 @@ class DeviceApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/snmpdevice/v3",
@@ -534,7 +534,7 @@ class DeviceApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/tcpdevice",
@@ -630,7 +630,7 @@ class DeviceApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/genericdevice/{deviceId}",
@@ -728,7 +728,7 @@ class DeviceApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/httpdevice/{deviceId}",
@@ -826,7 +826,7 @@ class DeviceApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/snmpdevice/{deviceId}",
@@ -924,7 +924,7 @@ class DeviceApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/tcpdevice/{deviceId}",
@@ -1022,7 +1022,7 @@ class DeviceApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/genericdevice/{deviceId}",
@@ -1123,7 +1123,7 @@ class DeviceApi(object):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/genericdevices",
@@ -1221,7 +1221,7 @@ class DeviceApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/httpdevice/{deviceId}",
@@ -1322,7 +1322,7 @@ class DeviceApi(object):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/httpdevices",
@@ -1420,7 +1420,7 @@ class DeviceApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/snmpdevice/{deviceId}",
@@ -1521,7 +1521,7 @@ class DeviceApi(object):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/snmpdevices",
@@ -1619,7 +1619,7 @@ class DeviceApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/tcpdevice/{deviceId}",
@@ -1720,7 +1720,7 @@ class DeviceApi(object):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/devices/tcpdevices",

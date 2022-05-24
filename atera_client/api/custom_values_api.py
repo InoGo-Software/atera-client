@@ -109,7 +109,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/{rowId}",
@@ -220,7 +220,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/agentfield/{agentId}/{fieldName}",
@@ -331,7 +331,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/contactfield/{contactId}/{fieldName}",
@@ -444,7 +444,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/contractfield/{contractId}/{fieldName}",
@@ -531,7 +531,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/customfields",
@@ -644,7 +644,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/customerfield/{customerId}/{fieldName}",
@@ -759,7 +759,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/genericfield/{genericDeviceId}/{fieldName}",
@@ -872,7 +872,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/httpfield/{httpDeviceId}/{fieldName}",
@@ -983,7 +983,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/slafield/{slaId}/{fieldName}",
@@ -1096,7 +1096,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/snmpfield/{snmpDeviceId}/{fieldName}",
@@ -1207,7 +1207,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/tcpfield/{tcpDeviceId}/{fieldName}",
@@ -1318,7 +1318,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/ticketfield/{ticketId}/{fieldName}",
@@ -1445,7 +1445,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/agentfield/{agentId}/{fieldName}",
@@ -1567,7 +1567,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/agentfield/{agentId}/{fieldName}/{value}",
@@ -1694,7 +1694,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/contactfield/{contactId}/{fieldName}",
@@ -1816,7 +1816,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/contactfield/{contactId}/{fieldName}/{value}",
@@ -1943,7 +1943,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/contractfield/{contractId}/{fieldName}",
@@ -2065,7 +2065,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/contractfield/{contractId}/{fieldName}/{value}",
@@ -2192,7 +2192,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/customerfield/{customerId}/{fieldName}",
@@ -2314,7 +2314,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/customerfield/{customerId}/{fieldName}/{value}",
@@ -2443,7 +2443,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/genericfield/{genericDeviceId}/{fieldName}",
@@ -2567,7 +2567,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/genericfield/{genericDeviceId}/{fieldName}/{value}",
@@ -2694,7 +2694,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/httpfield/{httpDeviceId}/{fieldName}",
@@ -2816,7 +2816,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/httpfield/{httpDeviceId}/{fieldName}/{value}",
@@ -2939,7 +2939,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/slafield/{slaId}/{fieldName}",
@@ -3059,7 +3059,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/slafield/{slaId}/{fieldName}/{value}",
@@ -3186,7 +3186,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/snmpfield/{snmpDeviceId}/{fieldName}",
@@ -3308,7 +3308,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/snmpfield/{snmpDeviceId}/{fieldName}/{value}",
@@ -3435,7 +3435,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/tcpfield/{tcpDeviceId}/{fieldName}",
@@ -3557,7 +3557,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/tcpfield/{tcpDeviceId}/{fieldName}/{value}",
@@ -3684,7 +3684,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/ticketfield/{ticketId}/{fieldName}",
@@ -3806,7 +3806,7 @@ class CustomValuesApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customvalues/ticketfield/{ticketId}/{fieldName}/{value}",

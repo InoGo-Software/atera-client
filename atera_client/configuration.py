@@ -230,7 +230,7 @@ class Configuration(object):
         :return: The Auth Settings information dict.
         """
         return {
-            "Account API": {
+            "api-key": {
                 "type": "api_key",
                 "in": "header",
                 "key": "X-API-KEY",

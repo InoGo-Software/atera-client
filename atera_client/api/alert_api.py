@@ -109,7 +109,7 @@ class AlertApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/alerts/{alertId}",
@@ -206,7 +206,7 @@ class AlertApi(object):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/alerts",
@@ -302,7 +302,7 @@ class AlertApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/alerts/{alertId}",
@@ -399,7 +399,7 @@ class AlertApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/alerts",

@@ -247,7 +247,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Authorization
 
 
-## Account API
+## api-key API
 
 - **Type**: API key
 - **API key parameter name**: X-API-KEY

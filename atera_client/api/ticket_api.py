@@ -109,7 +109,7 @@ class TicketApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/tickets/{ticketId}",
@@ -210,7 +210,7 @@ class TicketApi(object):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/tickets",
@@ -306,7 +306,7 @@ class TicketApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/tickets/{ticketId}",
@@ -406,7 +406,7 @@ class TicketApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/tickets/{ticketId}/billableduration",
@@ -510,7 +510,7 @@ class TicketApi(object):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/tickets/{ticketId}/comments",
@@ -610,7 +610,7 @@ class TicketApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/tickets/{ticketId}/nonbillableduration",
@@ -708,7 +708,7 @@ class TicketApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/tickets/{ticketId}/workhours",
@@ -814,7 +814,7 @@ class TicketApi(object):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/tickets/{ticketId}/workhoursrecords",
@@ -913,7 +913,7 @@ class TicketApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/tickets",
@@ -1021,7 +1021,7 @@ class TicketApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/tickets/{ticketId}",
@@ -1129,7 +1129,7 @@ class TicketApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/tickets/{ticketId}",
@@ -1224,7 +1224,7 @@ class TicketApi(object):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/tickets/statusmodified",

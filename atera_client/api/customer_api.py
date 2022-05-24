@@ -111,7 +111,7 @@ class CustomerApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customers/{customerId}",
@@ -204,7 +204,7 @@ class CustomerApi(object):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json", "text/json"])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customers",
@@ -300,7 +300,7 @@ class CustomerApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customers/{customerId}",
@@ -399,7 +399,7 @@ class CustomerApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customers",
@@ -498,7 +498,7 @@ class CustomerApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customers/folders",
@@ -597,7 +597,7 @@ class CustomerApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customers/attachments",
@@ -705,7 +705,7 @@ class CustomerApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customers/{customerId}",
@@ -813,7 +813,7 @@ class CustomerApi(object):
         )  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["api-key"]  # noqa: E501
 
         return self.api_client.call_api(
             "/api/v3/customers/{customerId}",
